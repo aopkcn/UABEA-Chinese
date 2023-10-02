@@ -56,7 +56,7 @@ namespace AudioPlugin
         {
             var selectedFolders = await win.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select export directory"
+                Title = "选择导出目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -117,10 +117,10 @@ namespace AudioPlugin
             string extension = GetExtension(compressionFormat);
             var selectedFile = await win.StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Save audio file",
+                Title = "保存音频文件",
                 FileTypeChoices = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType($"{extension.ToUpper()} file (*.{extension})") { Patterns = new List<string>() { "*." + extension } }
+                    new FilePickerFileType($"{extension.ToUpper()} 文件 (*.{extension})") { Patterns = new List<string>() { "*." + extension } }
                 },
                 DefaultExtension = extension,
                 SuggestedFileName = $"{name}-{Path.GetFileName(cont.FileInstance.path)}-{cont.PathId}"

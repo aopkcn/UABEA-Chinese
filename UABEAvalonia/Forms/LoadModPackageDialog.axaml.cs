@@ -50,7 +50,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select base folder"
+                Title = "选择基础文件夹"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -87,7 +87,7 @@ namespace UABEAvalonia
             if (fileInsts.Count == 0)
             {
                 await MessageBoxUtil.ShowDialog(this,
-                    "Error", "Did not load any files. Did you select any (double click) or set the correct base path?");
+                    "错误", "未加载任何文件。您是否选择了任何文件（双击）或设置了正确的基本路径？");
                 return;
             }
 

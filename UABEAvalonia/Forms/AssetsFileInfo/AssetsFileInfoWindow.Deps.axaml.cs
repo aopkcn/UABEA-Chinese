@@ -74,8 +74,8 @@ namespace UABEAvalonia
             AssetsFileInstance? selectedFile = activeFile;
             if (allMode)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You must add a dependency to a specific file, not the entire workspace.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您必须添加依赖项到特定文件，而不是整个工作区。");
 
                 return;
             }
@@ -98,8 +98,8 @@ namespace UABEAvalonia
             AssetsFileInstance? selectedFile = activeFile;
             if (allMode)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You must edit a dependency in a file, not one in the entire workspace.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您必须编辑文件中的依赖项，而不是整个工作区中的依赖项。");
 
                 return;
             }
@@ -107,16 +107,16 @@ namespace UABEAvalonia
             DependencyListBoxItem? dependency = GetSelectedDependency();
             if (dependency == null || dependency.dependency == null)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You must select a dependency to edit.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您必须选择要编辑的依赖项。");
 
                 return;
             }
 
             if (!dependency.isDependency)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "The base file is not a dependency.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "基础文件不是一个依赖项。");
 
                 return;
             }
@@ -146,8 +146,8 @@ namespace UABEAvalonia
             AssetsFileInstance? selectedFile = activeFile;
             if (allMode)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You must remove a dependency from a file, not the entire workspace.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您必须从文件中删除依赖项，而不是整个工作区。");
 
                 return;
             }
@@ -155,16 +155,16 @@ namespace UABEAvalonia
             DependencyListBoxItem? dependency = GetSelectedDependency();
             if (dependency == null)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You must select a dependency to remove.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您必须选择要删除的依赖项。");
 
                 return;
             }
 
             if (!dependency.isDependency)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You can't remove the base file.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您不能删除基础文件。");
 
                 return;
             }
@@ -200,8 +200,8 @@ namespace UABEAvalonia
             AssetsFileInstance? selectedFile = activeFile;
             if (allMode)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You must move a dependency from a file, not the entire workspace.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您必须从文件中移动依赖项，而不是整个工作区。");
 
                 return;
             }
@@ -209,16 +209,16 @@ namespace UABEAvalonia
             DependencyListBoxItem? dependency = GetSelectedDependency();
             if (dependency == null)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You must select a dependency to move.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您必须选择要移动的依赖项。");
 
                 return;
             }
 
             if (!dependency.isDependency || (moveUp && boxDependenciesList.SelectedIndex == 1))
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You can't move the base file.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您不能移动基础文件。");
 
                 return;
             }
@@ -227,8 +227,8 @@ namespace UABEAvalonia
 
             if (!moveUp && boxDependenciesList.SelectedIndex == deps.Count)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error",
-                    "You can't move down any further.");
+                await MessageBoxUtil.ShowDialog(this, "错误",
+                    "您不能再向下移动。");
 
                 return;
             }
@@ -285,9 +285,8 @@ namespace UABEAvalonia
 
         private async Task<bool> ShowMoveConfirmationDialog()
         {
-            var result = await MessageBoxUtil.ShowDialog(this, "Warning",
-                "Are you sure you want to (re)move this dependency? This function will not automatically remap\n" +
-                "the file ids in the assets in this file. Use only if you know what you're doing.", MessageBoxType.YesNo);
+            var result = await MessageBoxUtil.ShowDialog(this, "警告",
+                "您确定要移动此依赖项吗？此功能不会自动重新映射此文件中的资源文件标识。只有在您知道自己在做什么时才使用此功能。", MessageBoxType.YesNo);
 
             return result == MessageBoxResult.Yes;
         }

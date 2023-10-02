@@ -169,7 +169,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select base folder"
+                Title = "选择基础文件夹"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -187,7 +187,7 @@ namespace UABEAvalonia
             {
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("UABE Mod Installer Package") { Patterns = new List<string>() { "*.emip" } }
+                    new FilePickerFileType("UABE Mod 安装程序包") { Patterns = new List<string>() { "*.emip" } }
                 }
             });
 
@@ -202,7 +202,7 @@ namespace UABEAvalonia
 
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select base folder"
+                Title = "选择基础文件夹"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -255,7 +255,7 @@ namespace UABEAvalonia
             {
                 FileTypeChoices = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType($"UABE Mod Installer Package (*.emip)") { Patterns = new List<string>() { "*.emip" } }
+                    new FilePickerFileType($"UABE Mod 安装程序包 (*.emip)") { Patterns = new List<string>() { "*.emip" } }
                 },
             });
 

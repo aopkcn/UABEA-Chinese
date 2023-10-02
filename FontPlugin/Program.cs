@@ -65,7 +65,7 @@ namespace FontPlugin
         {
             var selectedFolders = await win.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select import directory"
+                Title = "选择导入目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -106,11 +106,11 @@ namespace FontPlugin
 
             var selectedFiles = await win.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "Open font file",
+                Title = "打开字体文件",
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("Font files (*.ttf;*.otf)") { Patterns = new List<string>() { "*.ttf", "*.otf" } },
-                    new FilePickerFileType("All types (*.*)") { Patterns = new List<string>() { "*.*" } }
+                    new FilePickerFileType("字体文件s (*.ttf;*.otf)") { Patterns = new List<string>() { "*.ttf", "*.otf" } },
+                    new FilePickerFileType("全部类型 (*.*)") { Patterns = new List<string>() { "*.*" } }
                 }
             });
 
@@ -162,7 +162,7 @@ namespace FontPlugin
         {
             var selectedFolders = await win.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select export directory"
+                Title = "选择导出目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -206,7 +206,7 @@ namespace FontPlugin
             if (byteData.Length == 0)
             {
                 await MessageBoxUtil.ShowDialog(win,
-                    "Empty font", "This font does not use m_FontData. It cannot be exported as a ttf or otf.");
+                    "空字体", "此字体不使用 m_FontData。无法导出为 ttf 或 otf。");
 
                 return false;
             }
@@ -216,11 +216,11 @@ namespace FontPlugin
 
             var selectedFile = await win.StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Save font file",
+                Title = "保存字体文件",
                 FileTypeChoices = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType($"Font file (*.{extension})") { Patterns = new List<string>() { "*." + extension } },
-                    new FilePickerFileType($"All types (*.*)") { Patterns = new List<string>() { "*.*" } },
+                    new FilePickerFileType($"字体文件 (*.{extension})") { Patterns = new List<string>() { "*." + extension } },
+                    new FilePickerFileType($"全部类型 (*.*)") { Patterns = new List<string>() { "*.*" } },
                 },
                 DefaultExtension = extension,
                 SuggestedFileName = $"{name}-{Path.GetFileName(cont.FileInstance.path)}-{cont.PathId}"

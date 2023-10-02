@@ -53,7 +53,7 @@ namespace TextAssetPlugin
         {
             var selectedFolders = await win.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select import directory"
+                Title = "选择导入目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -93,22 +93,22 @@ namespace TextAssetPlugin
 
             var filters = new List<FilePickerFileType>()
             {
-                new FilePickerFileType("Text files (*.txt)") { Patterns = new List<string>() { "*.txt" } },
-                new FilePickerFileType("All types (*.*)") { Patterns = new List<string>() { "*" } }
+                new FilePickerFileType("文本文件 (*.txt)") { Patterns = new List<string>() { "*.txt" } },
+                new FilePickerFileType("全部类型 (*.*)") { Patterns = new List<string>() { "*" } }
             };
 
             string ucontExt = TextAssetHelper.GetUContainerExtension(cont);
             if (ucontExt != string.Empty)
             {
                 string ucontExtNoDot = ucontExt[1..];
-                string displayName = $"{ucontExtNoDot} files (*{ucontExt})";
+                string displayName = $"{ucontExtNoDot} 文件 (*{ucontExt})";
                 List<string> patterns = new List<string>() { "*" + ucontExt };
                 filters.Insert(0, new FilePickerFileType(displayName) { Patterns = patterns });
             }
 
             var selectedFiles = await win.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "Open text file",
+                Title = "打开文本文件",
                 FileTypeFilter = filters
             });
 
@@ -160,7 +160,7 @@ namespace TextAssetPlugin
         {
             var selectedFolders = await win.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select export directory"
+                Title = "选择导出目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -201,8 +201,8 @@ namespace TextAssetPlugin
 
             var filters = new List<FilePickerFileType>()
             {
-                new FilePickerFileType("Text files (*.txt)") { Patterns = new List<string>() { "*.txt" } },
-                new FilePickerFileType("All types (*.*)") { Patterns = new List<string>() { "*" } }
+                new FilePickerFileType("文本文件 (*.txt)") { Patterns = new List<string>() { "*.txt" } },
+                new FilePickerFileType("全部类型 (*.*)") { Patterns = new List<string>() { "*" } }
             };
 
             string defaultExtension = "txt";
@@ -211,7 +211,7 @@ namespace TextAssetPlugin
             if (ucontExt != string.Empty)
             {
                 string ucontExtNoDot = ucontExt[1..];
-                string displayName = $"{ucontExtNoDot} files (*{ucontExt})";
+                string displayName = $"{ucontExtNoDot} 文件 (*{ucontExt})";
                 List<string> patterns = new List<string>() { "*" + ucontExt };
                 filters.Insert(0, new FilePickerFileType(displayName) { Patterns = patterns });
                 defaultExtension = ucontExtNoDot;
@@ -219,7 +219,7 @@ namespace TextAssetPlugin
 
             var selectedFile = await win.StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Save text file",
+                Title = "保存文本文件",
                 FileTypeChoices = filters,
                 DefaultExtension = defaultExtension,
                 SuggestedFileName = $"{name}-{Path.GetFileName(cont.FileInstance.path)}-{cont.PathId}"

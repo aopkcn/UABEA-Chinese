@@ -65,13 +65,13 @@ namespace UABEAvalonia
 
             if (fileId < 0)
             {
-                await MessageBoxUtil.ShowDialog(this, "Bad input", "File was invalid.");
+                await MessageBoxUtil.ShowDialog(this, "输入错误", "文件无效。");
                 return;
             }
 
             if (!long.TryParse(pathIdText, out long pathId))
             {
-                await MessageBoxUtil.ShowDialog(this, "Bad input", "Path ID was invalid.");
+                await MessageBoxUtil.ShowDialog(this, "输入错误", "路径 ID 无效。");
                 return;
             }
 

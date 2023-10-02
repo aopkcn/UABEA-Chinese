@@ -65,10 +65,10 @@ namespace TexturePlugin
         {
             var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "Open texture",
+                Title = "打开纹理",
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("Texture file") { Patterns = new List<string>() { "*.png", "*.tga" } }
+                    new FilePickerFileType("纹理文件") { Patterns = new List<string>() { "*.png", "*.tga" } }
                 }
             });
 
@@ -140,12 +140,12 @@ namespace TexturePlugin
 
             if (encImageBytes == null)
             {
-                string dialogText = $"Failed to encode texture format {fmt}!";
+                string dialogText = $"无法编码纹理格式 {fmt}!";
                 if (exceptionMessage != null)
                 {
                     dialogText += "\n" + exceptionMessage;
                 }
-                await MessageBoxUtil.ShowDialog(this, "Error", dialogText);
+                await MessageBoxUtil.ShowDialog(this, "错误", dialogText);
                 Close(false);
                 return;
             }

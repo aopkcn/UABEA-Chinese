@@ -1,35 +1,35 @@
 <p align="center"><img src="UABEAvalonia/Assets/logo.png" /></p>
 
-**Quick Downloads:**
+**快速下载:**
 
-[Latest Nightly (Windows)](https://nightly.link/nesrak1/UABEA/workflows/dotnet-desktop/master/uabea-windows.zip) | [Latest Nightly (Linux)](https://nightly.link/nesrak1/UABEA/workflows/dotnet-ubuntu/master/uabea-ubuntu.zip) | [Latest Release](https://github.com/nesrak1/UABEA/releases)
+[最新夜间版本 (Windows)](https://nightly.link/nesrak1/UABEA/workflows/dotnet-desktop/master/uabea-windows.zip) | [最新夜间版本 (Linux)](https://nightly.link/nesrak1/UABEA/workflows/dotnet-ubuntu/master/uabea-ubuntu.zip) | [最新发布版](https://github.com/nesrak1/UABEA/releases)
 
-[![GitHub issues](https://img.shields.io/github/issues/nesrak1/UABEA?logo=GitHub&style=flat-square)](https://github.com/nesrak1/UABEA/issues) [![discord](https://img.shields.io/discord/862035581491478558?label=discord&logo=discord&logoColor=FFFFFF&style=flat-square)](https://discord.gg/hd9VdswwZs)
+[![GitHub问题](https://img.shields.io/github/issues/nesrak1/UABEA?logo=GitHub&style=flat-square)](https://github.com/nesrak1/UABEA/issues) [![discord](https://img.shields.io/discord/862035581491478558?label=discord&logo=discord&logoColor=FFFFFF&style=flat-square)](https://discord.gg/hd9VdswwZs)
 
 ## UABEAvalonia
 
-Cross-platform Asset Bundle/Serialized File reader and writer. Originally based on (but not a fork of) [UABE](https://github.com/SeriousCache/UABE).
+跨平台的资产包/序列化文件读取和写入工具。最初基于（但不是分支自）[UABE](https://github.com/SeriousCache/UABE)。
 
-## Extracting assets
+## 提取资源
 
-I develop UABEA as more of a modding/research tool than an extracting tool. Use [AssetRipper](https://github.com/AssetRipper/AssetRipper) or [AssetStudio](https://github.com/Perfare/AssetStudio/) if you only want to extract assets.
+开发UABEA更多是作为一种修改/研究工具，而不是提取工具。如果您只想提取资源，请使用[AssetRipper](https://github.com/AssetRipper/AssetRipper)或[AssetStudio](https://github.com/Perfare/AssetStudio/)。
 
 ## Addressables
 
-Many games are also now using addressables. You can tell if the bundle you're opening is part of addressables because it has the path `StreamingAssets/aa/XXX/something.bundle`. [If you want to edit these bundles, you will need to clear the CRC checks with the CRC cleaning tool here](https://github.com/nesrak1/AddressablesTools/releases). Use `Example patchcrc catalog.json`, then move or rename the old catalog.json file and rename catalog.json.patched to catalog.json.
+许多游戏现在也使用地址。您可以通过路径`StreamingAssets/aa/XXX/something.bundle`来确定您打开的资产包是否属于地址。[如果您想编辑这些资产包，您需要使用此CRC清理工具清除CRC检查](https://github.com/nesrak1/AddressablesTools/releases)。使用`Example patchcrc catalog.json`，然后移动或重命名旧的catalog.json文件，并将catalog.json.patched重命名为catalog.json。
 
-## Libraries
+## 库
 
-- [Avalonia](https://github.com/AvaloniaUI/Avalonia) (MIT license)
-  - [Dock.Avalonia](https://github.com/wieslawsoltes/Dock) (MIT license)
-  - [AvaloniaEdit](https://github.com/AvaloniaUI/AvaloniaEdit) (MIT license)
-- [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET/tree/upd21-with-inst) (MIT license)
-  - [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) (MIT license)
-  - [Mono.Cecil](https://github.com/jbevain/cecil) (MIT license)
-  - [AssetRipper.TextureDecoder](https://github.com/AssetRipper/TextureDecoder) (MIT license)
-- [ISPC Texture Compressor](https://github.com/GameTechDev/ISPCTextureCompressor) (MIT license)
-- [Unity crnlib](https://github.com/Unity-Technologies/crunch/tree/unity) (zlib license)
-- [PVRTexLib](https://developer.imaginationtech.com/pvrtextool) (PVRTexTool license)
-- [ImageSharp](https://github.com/SixLabors/ImageSharp) (Apache License 2.0)
-- [Fsb5Sharp](https://github.com/SamboyCoding/Fmod5Sharp) (MIT license)
-- [Font Awesome](https://fontawesome.com) (CC BY 4.0 license)
+- [Avalonia](https://github.com/AvaloniaUI/Avalonia) (MIT 许可证)
+  - [Dock.Avalonia](https://github.com/wieslawsoltes/Dock) (MIT 许可证)
+  - [AvaloniaEdit](https://github.com/AvaloniaUI/AvaloniaEdit) (MIT 许可证)
+- [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET/tree/upd21-with-inst) (MIT 许可证)
+  - [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) (MIT 许可证)
+  - [Mono.Cecil](https://github.com/jbevain/cecil) (MIT 许可证)
+  - [AssetRipper.TextureDecoder](https://github.com/AssetRipper/TextureDecoder) (MIT 许可证)
+- [ISPC Texture Compressor](https://github.com/GameTechDev/ISPCTextureCompressor) (MIT 许可证)
+- [Unity crnlib](https://github.com/Unity-Technologies/crunch/tree/unity) (zlib 许可证)
+- [PVRTexLib](https://developer.imaginationtech.com/pvrtextool) (PVRTexTool 许可证)
+- [ImageSharp](https://github.com/SixLabors/ImageSharp) (Apache 许可证 2.0)
+- [Fsb5Sharp](https://github.com/SamboyCoding/Fmod5Sharp) (MIT 许可证)
+- [Font Awesome](https://fontawesome.com) (CC BY 4.0 许可证)

@@ -77,7 +77,7 @@ namespace UABEAvalonia
             }
             else
             {
-                await MessageBoxUtil.ShowDialog(this, "Error", "Missing classdata.tpk by exe.\nPlease make sure it exists.");
+                await MessageBoxUtil.ShowDialog(this, "错误", "exe 缺少 classdata.tpk 文件。\n请确保它存在。");
                 Close();
                 Environment.Exit(1);
             }
@@ -140,9 +140,8 @@ namespace UABEAvalonia
                 if (openInfoWindows.Count > 0)
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "Warning", "You cannot open two info windows at the same time. " +
-                                   "Consider opening two separate UABEA windows if you " +
-                                   "want two different games' files open at once.");
+                        "警告", "您不能同时打开两个信息窗口。" +
+                               "如果您想同时打开两个不同游戏的文件，请考虑打开两个单独的 UABEA 窗口。");
 
                     return;
                 }
@@ -174,7 +173,7 @@ namespace UABEAvalonia
             }
             else
             {
-                await MessageBoxUtil.ShowDialog(this, "Error", "This doesn't seem to be an assets file or bundle.");
+                await MessageBoxUtil.ShowDialog(this, "错误", "这似乎不是一个资产文件或捆绑包。");
             }
         }
 
@@ -192,10 +191,10 @@ namespace UABEAvalonia
         {
             var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "Open assets or bundle file",
+                Title = "打开资源或捆绑文件",
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("All files") { Patterns = new List<string>() { "*" } }
+                    new FilePickerFileType("全部文件") { Patterns = new List<string>() { "*" } }
                 },
                 AllowMultiple = true
             });
@@ -213,7 +212,7 @@ namespace UABEAvalonia
             {
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("UABE Mod Installer Package") { Patterns = new List<string>() { "*.emip" } }
+                    new FilePickerFileType("UABE 模组安装包") { Patterns = new List<string>() { "*.emip" } }
                 }
             });
 
@@ -272,7 +271,7 @@ namespace UABEAvalonia
 
             var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Save as...",
+                Title = "另存为...",
                 SuggestedFileName = item.Name
             });
 
@@ -293,10 +292,10 @@ namespace UABEAvalonia
             {
                 var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
                 {
-                    Title = "Open",
+                    Title = "打开",
                     FileTypeFilter = new List<FilePickerFileType>()
                     {
-                        new FilePickerFileType("All files") { Patterns = new List<string>() { "*" } }
+                        new FilePickerFileType("全部文件") { Patterns = new List<string>() { "*" } }
                     }
                 });
 
@@ -386,16 +385,12 @@ namespace UABEAvalonia
                 if (item.IsSerialized)
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "Error", "This doesn't seem to be a valid assets file, " +
-                                 "although the asset is serialized. Maybe the " +
-                                 "file got corrupted or is too new of a version?");
+                        "错误", "这似乎不是一个有效的资产文件，尽管该资产已序列化。也许文件已损坏或版本过新？");
                 }
                 else
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "Error", "This doesn't seem to be a valid assets file. " +
-                                 "If you want to export a non-assets file, " +
-                                 "use Export.");
+                        "错误", "这似乎不是一个有效的资产文件。如果您想导出非资产文件，请使用导出功能。");
                 }
             }
         }
@@ -407,7 +402,7 @@ namespace UABEAvalonia
 
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select export directory"
+                Title = "选择导出目录"
             });
 
             string[]? selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -448,7 +443,7 @@ namespace UABEAvalonia
 
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select import directory"
+                Title = "选择导入目录"
             });
 
             string[]? selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -526,8 +521,8 @@ namespace UABEAvalonia
             bool useCpp2Il = !ConfigurationManager.Settings.UseCpp2Il;
             ConfigurationManager.Settings.UseCpp2Il = useCpp2Il;
 
-            await MessageBoxUtil.ShowDialog(this, "Note",
-                $"Use Cpp2Il is set to: {useCpp2Il.ToString().ToLower()}");
+            await MessageBoxUtil.ShowDialog(this, "注意",
+                $"Cpp2Il 使用状态：{useCpp2Il.ToString().ToLower()}");
         }
 
         private async void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
@@ -624,7 +619,7 @@ namespace UABEAvalonia
                 {
                     var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                     {
-                        Title = "Save as..."
+                        Title = "另存为..."
                     });
 
                     string? selectedFilePath = FileDialogUtils.GetSaveFileDialogFile(selectedFile);
@@ -634,7 +629,7 @@ namespace UABEAvalonia
                     if (Path.GetFullPath(selectedFilePath) == Path.GetFullPath(BundleInst.path))
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "File in use", "Please use File > Save to save over the currently open bundle.");
+                            "文件正在使用中", "请使用“文件” > “保存”来覆盖当前打开的包文件。");
                         return;
                     }
 
@@ -645,7 +640,7 @@ namespace UABEAvalonia
                     catch (Exception ex)
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "Write exception", "There was a problem while writing the file:\n" + ex.ToString());
+                            "写入异常", "在写入文件时出现问题：\n" + ex.ToString());
                     }
                 }
                 else
@@ -657,7 +652,7 @@ namespace UABEAvalonia
                     catch (Exception ex)
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "Write exception", "There was a problem while writing the file:\n" + ex.ToString());
+                            "写入异常", "在写入文件时出现问题：\n" + ex.ToString());
                     }
                 }
             }
@@ -668,7 +663,7 @@ namespace UABEAvalonia
             if (changesUnsaved && BundleInst != null)
             {
                 MessageBoxResult choice = await MessageBoxUtil.ShowDialog(this,
-                    "Changes made", "You've modified this file. Would you like to save?",
+                    "已做出更改", "您已修改此文件。是否要保存？",
                     MessageBoxType.YesNo);
                 if (choice == MessageBoxResult.Yes)
                 {
@@ -690,19 +685,19 @@ namespace UABEAvalonia
                     if (changesUnsaved)
                     {
                         messageBoxTest =
-                            "You've modified this file, but you still haven't saved this bundle file to disk yet. If you want \n" +
-                            "to compress the file with changes, please save this bundle now and open that file instead. \n" +
-                            "Click Ok to compress the file without changes.";
+                            "您已经修改了此文件，但尚未将此捆绑文件保存到磁盘。 \n" +
+                            "如果您要压缩带有更改的文件，请立即保存此捆绑文件并打开该文件。 \n" +
+                            "单击“确定”以压缩不带更改的文件。";
                     }
                     else
                     {
                         messageBoxTest =
-                            "You've modified this file, but only the old file before you made changes is open. If you want to compress the file with \n" +
-                            "changes, please close this bundle and open the file you saved. Click Ok to compress the file without changes.";
+                            "您已经修改了此文件，但只有在进行更改之前的旧文件已打开。 \n" +
+                            "如果您要压缩带有更改的文件，请关闭此捆绑文件并打开您保存的文件。 单击“确定”以压缩不带更改的文件。";
                     }
 
                     MessageBoxResult continueWithChanges = await MessageBoxUtil.ShowDialog(
-                        this, "Note", messageBoxTest,
+                        this, "注意", messageBoxTest,
                         MessageBoxType.OKCancel);
 
                     if (continueWithChanges == MessageBoxResult.Cancel)
@@ -713,7 +708,7 @@ namespace UABEAvalonia
 
                 var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                 {
-                    Title = "Save as..."
+                    Title = "另存为..."
                 });
 
                 string? selectedFilePath = FileDialogUtils.GetSaveFileDialogFile(selectedFile);
@@ -723,15 +718,15 @@ namespace UABEAvalonia
                 if (Path.GetFullPath(selectedFilePath) == Path.GetFullPath(BundleInst.path))
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "File in use", "Since this file is already open in UABEA, you must pick a new file name (sorry!)");
+                        "文件正在使用中", "由于此文件已在 UABEA 中打开，您必须选择一个新的文件名（抱歉！）");
                     return;
                 }
 
                 const string lz4Option = "LZ4";
                 const string lzmaOption = "LZMA";
-                const string cancelOption = "Cancel";
+                const string cancelOption = "取消";
                 string result = await MessageBoxUtil.ShowDialogCustom(
-                    this, "Note", "What compression method do you want to use?\nLZ4: Faster but larger size\nLZMA: Slower but smaller size",
+                    this, "提示", "您想使用哪种压缩方法？\nLZ4：速度更快但文件大小较大\nLZMA：速度较慢但文件大小较小",
                     lz4Option, lzmaOption, cancelOption);
 
                 AssetBundleCompressionType compType = result switch
@@ -743,7 +738,7 @@ namespace UABEAvalonia
 
                 if (compType != AssetBundleCompressionType.None)
                 {
-                    ProgressWindow progressWindow = new ProgressWindow("Compressing...");
+                    ProgressWindow progressWindow = new ProgressWindow("正在压缩...");
 
                     Thread thread = new Thread(new ParameterizedThreadStart(CompressBundle));
                     object[] threadArgs =
@@ -760,21 +755,21 @@ namespace UABEAvalonia
             }
             else
             {
-                await MessageBoxUtil.ShowDialog(this, "Note", "Please open a bundle file before using compress.");
+                await MessageBoxUtil.ShowDialog(this, "提示", "请在使用压缩前打开一个捆绑文件。");
             }
         }
 
         private async Task<string?> AskLoadSplitFile(string fileToSplit)
         {
             MessageBoxResult splitRes = await MessageBoxUtil.ShowDialog(this,
-                "Split file detected", "This file ends with .split0. Create merged file?\n",
+                "检测到拆分文件", "此文件以 .split0 结尾。是否创建合并文件？\n",
                 MessageBoxType.YesNoCancel);
 
             if (splitRes == MessageBoxResult.Yes)
             {
                 var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                 {
-                    Title = "Select location for merged file",
+                    Title = "选择合并文件的位置",
                     SuggestedStartLocation = await StorageProvider.TryGetFolderFromPathAsync(Path.GetDirectoryName(fileToSplit)!),
                     SuggestedFileName = Path.GetFileName(fileToSplit[..^".split0".Length])
                 });
@@ -815,11 +810,11 @@ namespace UABEAvalonia
         {
             string decompSize = FileUtils.GetFormattedByteSize(GetBundleDataDecompressedSize(bundleInst.file));
 
-            const string fileOption = "File";
-            const string memoryOption = "Memory";
-            const string cancelOption = "Cancel";
+            const string fileOption = "文件";
+            const string memoryOption = "内存";
+            const string cancelOption = "取消";
             string result = await MessageBoxUtil.ShowDialogCustom(
-                this, "Note", "This bundle is compressed. Decompress to file or memory?\nSize: " + decompSize,
+                this, "注意", "这个包已经被压缩。要解压到文件还是内存？\n大小：" + decompSize,
                 fileOption, memoryOption, cancelOption);
 
             if (result == fileOption)
@@ -829,10 +824,10 @@ namespace UABEAvalonia
                 {
                     var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                     {
-                        Title = "Save as...",
+                        Title = "另存为...",
                         FileTypeChoices = new List<FilePickerFileType>()
                         {
-                            new FilePickerFileType("All files") { Patterns = new List<string>() { "*" } }
+                            new FilePickerFileType("全部文件") { Patterns = new List<string>() { "*" } }
                         }
                     });
 
@@ -843,7 +838,7 @@ namespace UABEAvalonia
                     if (Path.GetFullPath(selectedFilePath) == Path.GetFullPath(bundleInst.path))
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "File in use", "Since this file is already open in UABEA, you must pick a new file name (sorry!)");
+                            "文件已被使用", "由于此文件已在 UABEA 中打开，您必须选择一个新的文件名（抱歉！）");
                         continue;
                     }
                     else
@@ -992,7 +987,7 @@ namespace UABEAvalonia
 
             Workspace.Reset(null);
 
-            lblFileName.Text = "No file opened.";
+            lblFileName.Text = "未打开文件。";
         }
 
         private void SetBundleControlsEnabled(bool enabled, bool hasAssets = false)

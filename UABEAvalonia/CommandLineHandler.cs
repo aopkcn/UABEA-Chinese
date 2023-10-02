@@ -11,23 +11,23 @@ namespace UABEAvalonia
         public static void PrintHelp()
         {
             Console.WriteLine("UABE AVALONIA");
-            Console.WriteLine("WARNING: Command line support VERY EARLY");
-            Console.WriteLine("There is a high chance of stuff breaking");
-            Console.WriteLine("Use at your own risk");
-            Console.WriteLine("  UABEAvalonia batchexportbundle <directory>");
-            Console.WriteLine("  UABEAvalonia batchimportbundle <directory>");
-            Console.WriteLine("  UABEAvalonia applyemip <emip file> <directory>");
-            Console.WriteLine("Bundle import/export arguments:");
-            Console.WriteLine("  -keepnames writes out to the exact file name in the bundle.");
-            Console.WriteLine("      Normally, file names are prepended with the bundle's name.");
-            Console.WriteLine("      Note: these names are not compatible with batchimport.");
-            Console.WriteLine("  -kd keep .decomp files. When UABEA opens compressed bundles,");
-            Console.WriteLine("      they are decompressed into .decomp files. If you want to");
-            Console.WriteLine("      decompress bundles, you can use this flag to keep them");
-            Console.WriteLine("      without deleting them.");
-            Console.WriteLine("  -fd overwrite old .decomp files.");
-            Console.WriteLine("  -md decompress into memory. Doesn't write .decomp files.");
-            Console.WriteLine("      -kd and -fd won't do anything with this flag set.");
+            Console.WriteLine("警告：命令行支持非常早期");
+            Console.WriteLine("存在很高的损坏风险");
+            Console.WriteLine("请自行决定是否使用");
+            Console.WriteLine("  UABEAvalonia batchexportbundle <目录>");
+            Console.WriteLine("  UABEAvalonia batchimportbundle <目录>");
+            Console.WriteLine("  UABEAvalonia applyemip <emip 文件> <目录>");
+            Console.WriteLine("Bundle 导入/导出参数:");
+            Console.WriteLine("  -keepnames 写出到 bundle 中的确切文件名。");
+            Console.WriteLine("      通常，文件名会以 bundle 的名称作为前缀。");
+            Console.WriteLine("      注意：这些名称与 batchimport 不兼容。");
+            Console.WriteLine("  -kd 保留 .decomp 文件。当 UABEA 打开压缩的 bundles 时，");
+            Console.WriteLine("      它们会被解压缩成 .decomp 文件。如果您想要");
+            Console.WriteLine("      解压缩 bundles，您可以使用此标志来保留它们");
+            Console.WriteLine("      而不删除它们。");
+            Console.WriteLine("  -fd 覆盖旧的 .decomp 文件。");
+            Console.WriteLine("  -md 解压缩到内存中。不写入 .decomp 文件。");
+            Console.WriteLine("      在设置此标志的情况下，-kd 和 -fd 不会起作用。");
         }
 
         private static string GetMainFileName(string[] args)

@@ -90,7 +90,7 @@ namespace TexturePlugin
             {
                 string[] firstLines = errorBuilder.ToString().Split('\n').Take(20).ToArray();
                 string firstLinesStr = string.Join('\n', firstLines);
-                await MessageBoxUtil.ShowDialog(win, "Some errors occurred while exporting", firstLinesStr);
+                await MessageBoxUtil.ShowDialog(win, "导出过程中发生了一些错误", firstLinesStr);
             }
 
             return true;
@@ -105,7 +105,7 @@ namespace TexturePlugin
 
             var selectedFolders = await win.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select import directory"
+                Title = "选择导入目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);

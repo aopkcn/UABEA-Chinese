@@ -118,7 +118,7 @@ namespace UABEAvalonia
                     bool saved = await win.ShowEditAssetWindow(cont);
                     if (saved)
                     {
-                        await MessageBoxUtil.ShowDialog(win, "Note", "Asset updated. Changes will be shown next time you open this asset.");
+                        await MessageBoxUtil.ShowDialog(win, "注意", "资源已更新。更改将在下次打开此资源时显示。");
                     }
                 }
             }
@@ -183,9 +183,9 @@ namespace UABEAvalonia
 
             if (baseField == null)
             {
-                TreeViewItem errorItem0 = CreateTreeItem("Asset failed to deserialize.");
-                TreeViewItem errorItem1 = CreateTreeItem("The file version may be too new for");
-                TreeViewItem errorItem2 = CreateTreeItem("this tpk or the file format is custom.");
+                TreeViewItem errorItem0 = CreateTreeItem("资源反序列化失败。");
+                TreeViewItem errorItem1 = CreateTreeItem("文件版本可能过新");
+                TreeViewItem errorItem2 = CreateTreeItem("或文件格式为自定义格式。");
                 errorItem0.ItemsSource = new List<TreeViewItem>() { errorItem1, errorItem2 };
                 ListItems.Add(errorItem0);
                 return;

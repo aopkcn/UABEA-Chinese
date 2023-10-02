@@ -56,7 +56,7 @@ namespace TexturePlugin
 
             var selectedFolders = await win.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select export directory"
+                Title = "选择导出目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -114,7 +114,7 @@ namespace TexturePlugin
             {
                 string[] firstLines = errorBuilder.ToString().Split('\n').Take(20).ToArray();
                 string firstLinesStr = string.Join('\n', firstLines);
-                await MessageBoxUtil.ShowDialog(win, "Some errors occurred while exporting", firstLinesStr);
+                await MessageBoxUtil.ShowDialog(win, "导出时发生了一些错误", firstLinesStr);
             }
 
             return true;
@@ -130,7 +130,7 @@ namespace TexturePlugin
             // 0x0 texture, usually called like Font Texture or smth
             if (texFile.m_Width == 0 && texFile.m_Height == 0)
             {
-                await MessageBoxUtil.ShowDialog(win, "Error", $"Texture size is 0x0. Texture cannot be exported.");
+                await MessageBoxUtil.ShowDialog(win, "错误", $"纹理大小为0x0。无法导出纹理。");
                 return false;
             }
 
@@ -138,11 +138,11 @@ namespace TexturePlugin
 
             var selectedFile = await win.StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Save texture",
+                Title = "保存纹理",
                 FileTypeChoices = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("PNG file") { Patterns = new List<string>() { "*.png" } },
-                    new FilePickerFileType("TGA file") { Patterns = new List<string>() { "*.tga" } },
+                    new FilePickerFileType("PNG 文件") { Patterns = new List<string>() { "*.png" } },
+                    new FilePickerFileType("TGA 文件") { Patterns = new List<string>() { "*.tga" } },
                 },
                 SuggestedFileName = $"{assetName}-{Path.GetFileName(cont.FileInstance.path)}-{cont.PathId}",
                 DefaultExtension = "png"
@@ -158,7 +158,7 @@ namespace TexturePlugin
             if (!TextureHelper.GetResSTexture(texFile, cont.FileInstance))
             {
                 string resSName = Path.GetFileName(texFile.m_StreamData.path);
-                await MessageBoxUtil.ShowDialog(win, "Error", $"[{errorAssetName}]: resS was detected but {resSName} was not found in bundle");
+                await MessageBoxUtil.ShowDialog(win, "错误", $"[{errorAssetName}]: 检测到 resS，但在包中未找到 {resSName}");
                 return false;
             }
 
@@ -167,7 +167,7 @@ namespace TexturePlugin
             if (data == null)
             {
                 string resSName = Path.GetFileName(texFile.m_StreamData.path);
-                await MessageBoxUtil.ShowDialog(win, "Error", $"[{errorAssetName}]: resS was detected but {resSName} was not found on disk");
+                await MessageBoxUtil.ShowDialog(win, "错误", $"[{errorAssetName}]: 检测到 resS，但在磁盘上未找到 {resSName}");
                 return false;
             }
 
@@ -178,7 +178,7 @@ namespace TexturePlugin
             if (!success)
             {
                 string texFormat = ((TextureFormat)texFile.m_TextureFormat).ToString();
-                await MessageBoxUtil.ShowDialog(win, "Error", $"[{errorAssetName}]: Failed to decode texture format {texFormat}");
+                await MessageBoxUtil.ShowDialog(win, "错误", $"[{errorAssetName}]: 无法解码纹理格式 {texFormat}");
             }
             return success;
         }

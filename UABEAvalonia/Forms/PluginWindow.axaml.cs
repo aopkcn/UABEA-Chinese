@@ -54,7 +54,7 @@ namespace UABEAvalonia
             }
             catch (Exception ex)
             {
-                await MessageBoxUtil.ShowDialog(this, "Plugin Exception!", $"Plugin {menuPlugInf.displayName} has crashed. Stacktrace:\n" + ex.ToString());
+                await MessageBoxUtil.ShowDialog(this, "²å¼þÒì³££¡", $"²å¼þ {menuPlugInf.displayName} ÒÑ±ÀÀ£¡£¶ÑÕ»¸ú×Ù:\n" + ex.ToString());
             }
             Close(true);
         }

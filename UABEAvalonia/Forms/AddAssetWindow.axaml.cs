@@ -80,7 +80,7 @@ namespace UABEAvalonia
 
             if (!long.TryParse(pathIdText, out pathId))
             {
-                await MessageBoxUtil.ShowDialog(this, "Bad input", "Path ID was invalid.");
+                await MessageBoxUtil.ShowDialog(this, "输入错误", "路径 ID 无效。");
                 return;
             }
 
@@ -90,7 +90,7 @@ namespace UABEAvalonia
                 {
                     if (!TryParseClassDatabase(typeIdText, createBlankAsset, out tempField, out typeId))
                     {
-                        await MessageBoxUtil.ShowDialog(this, "Bad input", "Class type was invalid.");
+                        await MessageBoxUtil.ShowDialog(this, "输入错误", "类类型无效。.");
                         return;
                     }
                     else
@@ -106,7 +106,7 @@ namespace UABEAvalonia
             {
                 if (!TryParseClassDatabase(typeIdText, createBlankAsset, out tempField, out typeId))
                 {
-                    await MessageBoxUtil.ShowDialog(this, "Bad input", "Class type was invalid.");
+                    await MessageBoxUtil.ShowDialog(this, "输入错误", "类类型无效。");
                     return;
                 }
             }
@@ -117,7 +117,7 @@ namespace UABEAvalonia
             }
             else if (!ushort.TryParse(monoIdText, out monoId))
             {
-                await MessageBoxUtil.ShowDialog(this, "Bad input", "Mono ID was invalid.");
+                await MessageBoxUtil.ShowDialog(this, "错误输入", "Mono ID 无效。");
                 return;
             }
 

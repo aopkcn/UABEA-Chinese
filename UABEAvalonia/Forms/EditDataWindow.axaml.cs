@@ -52,7 +52,7 @@ namespace UABEAvalonia
             byte[]? data = impexp.ImportTextAsset(sr, out string? exceptionMessage);
             if (data == null)
             {
-                await MessageBoxUtil.ShowDialog(this, "Compile Error", "Problem with import:\n" + exceptionMessage);
+                await MessageBoxUtil.ShowDialog(this, "编译错误", "导入时出现问题：\n" + exceptionMessage);
                 return;
             }
 

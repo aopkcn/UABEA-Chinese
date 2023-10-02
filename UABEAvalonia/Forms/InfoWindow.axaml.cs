@@ -265,7 +265,7 @@ namespace UABEAvalonia
                 if (!hasGameObjectParent)
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "Warning", "The asset you selected is not a scene asset.");
+                        "警告", "您选择的资源不是场景资源。");
 
                     return;
                 }
@@ -284,7 +284,7 @@ namespace UABEAvalonia
                     catch
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "Error", "Asset failed to deserialize.");
+                            "错误", "资源反序列化失败。");
 
                         return;
                     }
@@ -293,7 +293,7 @@ namespace UABEAvalonia
                 if (componentBf == null)
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "Error", "Asset failed to deserialize.");
+                        "错误", "资源反序列化失败。");
 
                     return;
                 }
@@ -374,7 +374,7 @@ namespace UABEAvalonia
             if (selection == null)
             {
                 await MessageBoxUtil.ShowDialog(this,
-                    "Error", "Asset failed to deserialize.");
+                    "错误", "资源反序列化失败。");
                 return;
             }
 
@@ -387,8 +387,8 @@ namespace UABEAvalonia
                 return;
 
             MessageBoxResult choice = await MessageBoxUtil.ShowDialog(this,
-                "Removing assets", "Removing an asset referenced by other assets can cause crashes!\nAre you sure?",
-                MessageBoxType.YesNo);
+              "移除资源", "移除被其他资源引用的资源可能会导致崩溃！\n您确定要继续吗？",
+              MessageBoxType.YesNo);
             if (choice == MessageBoxResult.Yes)
             {
                 List<AssetContainer> selection = GetSelectedAssetsReplaced();
@@ -461,7 +461,7 @@ namespace UABEAvalonia
         private async Task AskForSave()
         {
             MessageBoxResult choice = await MessageBoxUtil.ShowDialog(this,
-                "Changes made", "You've modified this file. Would you like to save?",
+                "已进行更改", "您已修改了此文件。您想保存吗？",
                 MessageBoxType.YesNo);
             if (choice == MessageBoxResult.Yes)
             {
@@ -512,11 +512,11 @@ namespace UABEAvalonia
                     catch (Exception ex)
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "Write exception", "There was a problem while writing the file:\n" + ex.ToString());
+                            "写入异常", "在写入文件时出现问题:\n" + ex.ToString());
                     }
                 }
 
-                await MessageBoxUtil.ShowDialog(this, "Success", "File saved. To complete changes, exit this window and File->Save in bundle window.");
+                await MessageBoxUtil.ShowDialog(this, "成功", "文件已保存。要完成更改，请退出此窗口并在包窗口中选择文件->保存。");
             }
             else
             {
@@ -538,7 +538,7 @@ namespace UABEAvalonia
                         {
                             var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                             {
-                                Title = "Save as...",
+                                Title = "另存为...",
                                 SuggestedFileName = file.name
                             });
 
@@ -550,7 +550,7 @@ namespace UABEAvalonia
                             if (Path.GetFullPath(filePath) == Path.GetFullPath(file.path))
                             {
                                 await MessageBoxUtil.ShowDialog(this,
-                                    "File in use", "You already have this file open. To overwrite, use Save instead of Save as.");
+                                    "文件已打开", "您已经打开了此文件。要覆盖，请使用保存而不是另存为。");
 
                                 continue;
                             }
@@ -593,7 +593,7 @@ namespace UABEAvalonia
                     catch (Exception ex)
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "Write exception", "There was a problem while writing the file:\n" + ex.ToString());
+                            "写入异常", "在写入文件时出现问题:\n" + ex.ToString());
                     }
                 }
 
@@ -650,7 +650,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select export directory"
+                Title = "选择导出目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -685,11 +685,11 @@ namespace UABEAvalonia
 
             var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Save as...",
+                Title = "另存为...",
                 FileTypeChoices = new List<FilePickerFileType>()
                 {
                     new FilePickerFileType("Raw Unity Asset (*.dat)") { Patterns = new List<string>() { "*.dat" } },
-                    new FilePickerFileType("All types (*.*)") { Patterns = new List<string>() { "*" } }
+                    new FilePickerFileType("全部类型 (*.*)") { Patterns = new List<string>() { "*" } }
                 },
                 DefaultExtension = "dat",
                 SuggestedFileName = $"{assetName}-{Path.GetFileName(selectedInst.path)}-{selectedCont.PathId}"
@@ -710,7 +710,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select export directory"
+                Title = "选择导出目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -761,11 +761,11 @@ namespace UABEAvalonia
 
             var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Save as...",
+                Title = "另存为...",
                 FileTypeChoices = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("UABE text dump (*.txt)") { Patterns = new List<string>() { "*.txt" } },
-                    new FilePickerFileType("UABEA json dump (*.json)") { Patterns = new List<string>() { "*.json" } }
+                    new FilePickerFileType("UABE 文本转储文件 (*.txt)") { Patterns = new List<string>() { "*.txt" } },
+                    new FilePickerFileType("UABEA JSON 转储文件 (*.json)") { Patterns = new List<string>() { "*.json" } }
                 },
                 DefaultExtension = "txt",
                 SuggestedFileName = $"{assetName}-{Path.GetFileName(selectedInst.path)}-{selectedCont.PathId}"
@@ -799,7 +799,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select import directory"
+                Title = "选择导入目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -839,10 +839,10 @@ namespace UABEAvalonia
 
             var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "Open",
+                Title = "打开",
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("Raw Unity Asset") { Patterns = new List<string>() { "*.dat" } }
+                    new FilePickerFileType("原始 Unity 资源") { Patterns = new List<string>() { "*.dat" } }
                 }
             });
 
@@ -866,7 +866,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Select import directory"
+                Title = "选择导入目录"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -917,7 +917,7 @@ namespace UABEAvalonia
 
                         if (bytes == null)
                         {
-                            await MessageBoxUtil.ShowDialog(this, "Parse error", "Something went wrong when reading the dump file:\n" + exceptionMessage);
+                            await MessageBoxUtil.ShowDialog(this, "解析错误", "读取转储文件时出现问题:\n" + exceptionMessage);
                             return;
                         }
 
@@ -935,11 +935,11 @@ namespace UABEAvalonia
 
             var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "Open",
+                Title = "打开",
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("UABE text dump") { Patterns = new List<string>() { "*.txt" } },
-                    new FilePickerFileType("UABEA json dump") { Patterns = new List<string>() { "*.json" } }
+                    new FilePickerFileType("UABE 文本导出") { Patterns = new List<string>() { "*.txt" } },
+                    new FilePickerFileType("UABEA JSON 导") { Patterns = new List<string>() { "*.json" } }
                 }
             });
 
@@ -968,7 +968,7 @@ namespace UABEAvalonia
 
                 if (bytes == null)
                 {
-                    await MessageBoxUtil.ShowDialog(this, "Parse error", "Something went wrong when reading the dump file:\n" + exceptionMessage);
+                    await MessageBoxUtil.ShowDialog(this, "解析错误", "读取转储文件时出现问题:\n" + exceptionMessage);
                     return;
                 }
 
@@ -982,7 +982,7 @@ namespace UABEAvalonia
             AssetTypeValueField baseField = cont.BaseValueField;
             if (baseField == null)
             {
-                await MessageBoxUtil.ShowDialog(this, "Error", "Something went wrong deserializing this asset.");
+                await MessageBoxUtil.ShowDialog(this, "错误", "在反序列化此资产时发生了问题。");
                 return false;
             }
 
@@ -1038,7 +1038,7 @@ namespace UABEAvalonia
 
             if (!foundResult)
             {
-                await MessageBoxUtil.ShowDialog(this, "Search end", "Can't find any assets that match.");
+                await MessageBoxUtil.ShowDialog(this, "搜索结束", "找不到与之匹配的任何资产。");
 
                 searchText = "";
                 searchStart = 0;
@@ -1052,7 +1052,7 @@ namespace UABEAvalonia
         {
             if (!SelectAsset(targetFile, targetPathId))
             {
-                await MessageBoxUtil.ShowDialog(this, "Search end", "Can't find any assets that match.");
+                await MessageBoxUtil.ShowDialog(this, "搜索结束", "找不到与之匹配的任何资产。");
                 return;
             }
         }
@@ -1181,7 +1181,7 @@ namespace UABEAvalonia
         {
             if (dataGrid.SelectedItem == null)
             {
-                await MessageBoxUtil.ShowDialog(this, "Note", "No item selected.");
+                await MessageBoxUtil.ShowDialog(this, "注意", "未选择任何项目。");
                 return true;
             }
             return false;
@@ -1267,10 +1267,10 @@ namespace UABEAvalonia
         private async void Workspace_MonoTemplateLoadFailed(string path)
         {
             await MessageBoxUtil.ShowDialog(
-                this, "Error",
-                "MonoBehaviour template info failed to load.\n" +
-                "MonoBehaviour assets will not be fully deserialized.\n" +
-                $"Searched in {path}");
+                this, "错误",
+                "MonoBehaviour 模板信息加载失败。\n" +
+                "MonoBehaviour 资源将无法完全反序列化。\n" +
+                $"搜索路径：{path}");
         }
 
         // TEMPORARY DATAGRID HACKS
