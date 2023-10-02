@@ -31,13 +31,13 @@ namespace UABEAvalonia
             {
                 stackPanel.Children.Remove(btn2);
                 stackPanel.Children.Remove(btn3);
-                btn1.Content = "OK";
+                btn1.Content = "确定";
             }
             else if (type == MessageBoxType.OKCancel)
             {
                 stackPanel.Children.Remove(btn3);
-                btn1.Content = "OK";
-                btn2.Content = "Cancel";
+                btn1.Content = "确定";
+                btn2.Content = "取消";
             }
             else if (type == MessageBoxType.YesNo)
             {

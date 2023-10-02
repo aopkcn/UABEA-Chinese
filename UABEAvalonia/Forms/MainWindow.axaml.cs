@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace UABEAvalonia
 {
     public partial class MainWindow : Window
@@ -48,6 +49,7 @@ namespace UABEAvalonia
             menuExit.Click += MenuExit_Click;
             menuToggleDarkTheme.Click += MenuToggleDarkTheme_Click;
             menuToggleCpp2Il.Click += MenuToggleCpp2Il_Click;
+            menuZygf.Click += MenuZygf_Click;
             menuAbout.Click += MenuAbout_Click;
             btnExport.Click += BtnExport_Click;
             btnImport.Click += BtnImport_Click;
@@ -232,7 +234,12 @@ namespace UABEAvalonia
                 await dialog.ShowDialog(this);
             }
         }
-
+        private void MenuZygf_Click(object? sender, RoutedEventArgs e)
+        {
+            string url = "https://www.aopk.cn/16968.html";
+            // 使用默认的 Web 浏览器打开指定的网址
+            System.Diagnostics.Process.Start("cmd.exe", "/c start " + url);
+        }
         private void MenuAbout_Click(object? sender, RoutedEventArgs e)
         {
             About about = new About();
@@ -987,7 +994,7 @@ namespace UABEAvalonia
 
             Workspace.Reset(null);
 
-            lblFileName.Text = "未打开文件。";
+            lblFileName.Text = "您还没有打开文件";
         }
 
         private void SetBundleControlsEnabled(bool enabled, bool hasAssets = false)
