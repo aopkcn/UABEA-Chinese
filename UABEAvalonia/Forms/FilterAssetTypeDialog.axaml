@@ -5,7 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="500"
         Width="300" Height="500"
         x:Class="UABEAvalonia.FilterAssetTypeDialog"
-        Title="Type Filter"
+        Title="类型筛选"
         WindowStartupLocation="CenterOwner">
 	<Grid Margin="10,10,10,10">
 		<Grid.RowDefinitions>
@@ -29,8 +29,8 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
-			<Button Content="Select all" Grid.Column="0" Name="selectBtn" />
-			<Button Content="Deselect all" Grid.Column="1" Name="deselectBtn" />
+			<Button Content="全选" Grid.Column="0" Name="selectBtn" />
+			<Button Content="取消全选" Grid.Column="1" Name="deselectBtn" />
 		</Grid>
 	</Grid>
 </Window>

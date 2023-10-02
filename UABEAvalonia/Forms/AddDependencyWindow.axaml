@@ -6,7 +6,7 @@
         Width="350" Height="160"
         Icon="/Assets/uabeavalonia16.ico"
         x:Class="UABEAvalonia.AddDependencyWindow"
-        Title="Add dependency"
+        Title="添加依赖项"
         WindowStartupLocation="CenterOwner">
 	<Grid Margin="10,10,10,10">
 		<Grid VerticalAlignment="Top">
@@ -20,16 +20,16 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
-			<Label Grid.Column="0" Grid.Row="0">File name</Label>
+			<Label Grid.Column="0" Grid.Row="0">文件名</Label>
 			<TextBox Grid.Column="1" Grid.Row="0" Name="boxFileName"></TextBox>
-			<Label Grid.Column="0" Grid.Row="1">Original file name</Label>
+			<Label Grid.Column="0" Grid.Row="1">原始文件名</Label>
 			<TextBox Grid.Column="1" Grid.Row="1" IsEnabled="False" Name="boxOrigFileName"></TextBox>
-			<Label Grid.Column="0" Grid.Row="2">Dependency type</Label>
+			<Label Grid.Column="0" Grid.Row="2">依赖项类型</Label>
 			<ComboBox Grid.Column="1" Grid.Row="2" SelectedIndex="0" Name="ddDepType">
-				<ComboBoxItem>Normal</ComboBoxItem>
-				<ComboBoxItem>Cached</ComboBoxItem>
-				<ComboBoxItem>Serialized</ComboBoxItem>
-				<ComboBoxItem>Meta</ComboBoxItem>
+				<ComboBoxItem>普通</ComboBoxItem>
+				<ComboBoxItem>缓存</ComboBoxItem>
+				<ComboBoxItem>序列化</ComboBoxItem>
+				<ComboBoxItem>元数据</ComboBoxItem>
 			</ComboBox>
 			<Label Grid.Column="0" Grid.Row="3">GUID</Label>
 			<TextBox Grid.Column="1" Grid.Row="3" IsEnabled="False" Name="boxGuid">00000000000000000000000000000000</TextBox>
@@ -39,8 +39,8 @@
 				<ColumnDefinition Width="*"></ColumnDefinition>
 				<ColumnDefinition Width="*"></ColumnDefinition>
 			</Grid.ColumnDefinitions>
-			<Button Grid.Column="0" Name="btnOk">Ok</Button>
-			<Button Grid.Column="1" Name="btnCancel">Cancel</Button>
+			<Button Grid.Column="0" Name="btnOk">确定</Button>
+			<Button Grid.Column="1" Name="btnCancel">取消</Button>
 		</Grid>
 	</Grid>
 </Window>

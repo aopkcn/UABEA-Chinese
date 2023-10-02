@@ -7,37 +7,37 @@
         Width="1100" Height="500"
         Icon="/Assets/uabeavalonia16.ico"
         x:Class="UABEAvalonia.InfoWindow"
-        Title="Assets Info"
+        Title="资产信息"
         WindowStartupLocation="CenterOwner">
   <Window.Resources>
     <local:AssetTypeIconConverter x:Key="AssetTypeIconConverter" />
   </Window.Resources>
   <Grid>
     <Menu Height="22" VerticalAlignment="Top">
-      <MenuItem Header="File">
-        <MenuItem Header="Add" HotKey="Ctrl+N" InputGesture="Ctrl+N" Name="menuAdd" />
-        <MenuItem Header="Save" HotKey="Ctrl+S" InputGesture="Ctrl+S" Name="menuSave" />
-        <MenuItem Header="Save as..." HotKey="Ctrl+Shift+S" InputGesture="Ctrl+Shift+S" Name="menuSaveAs" />
-        <MenuItem Header="Mod Maker">
-          <MenuItem Header="Create package file" Name="menuCreatePackageFile" />
-        </MenuItem>
-        <MenuItem Header="Close" HotKey="Ctrl+W" InputGesture="Ctrl+W" Name="menuClose" />
-      </MenuItem>
-      <MenuItem Header="View">
-        <MenuItem Header="Search by name" HotKey="Ctrl+F" InputGesture="Ctrl+F" Name="menuSearchByName" />
-        <MenuItem Header="Continue search" InputGesture="F3" Name="menuContinueSearch" />
-        <MenuItem Header="Go to asset" HotKey="Ctrl+G" InputGesture="Ctrl+G" Name="menuGoToAsset" />
-        <MenuItem Header="Filter" HotKey="Ctrl+E" InputGesture="Ctrl+E" Name="menuFilter" />
-      </MenuItem>
-      <MenuItem Header="Tools">
-        <MenuItem Header="Info" HotKey="F4" InputGesture="F4" Name="menuInfo" />
-        <MenuItem Header="Type Tree" HotKey="F5" InputGesture="F5" Name="menuTypeTree" />
-        <MenuItem Header="Dependencies" HotKey="F6" InputGesture="F6" Name="menuDependencies" />
-        <MenuItem Header="Scripts" HotKey="F7" InputGesture="F7" Name="menuScripts" />
-        <MenuItem Header="Scene Hierarchy" HotKey="F8" InputGesture="F8" Name="menuHierarchy" />
-      </MenuItem>
+    <MenuItem Header="文件">
+				<MenuItem Header="添加" HotKey="Ctrl+N" InputGesture="Ctrl+N" Name="menuAdd" />
+				<MenuItem Header="保存" HotKey="Ctrl+S" InputGesture="Ctrl+S" Name="menuSave" />
+				<MenuItem Header="另存为..." HotKey="Ctrl+Shift+S" InputGesture="Ctrl+Shift+S" Name="menuSaveAs" />
+				<MenuItem Header="Mod 制作者">
+					<MenuItem Header="创建包文件" Name="menuCreatePackageFile" />
+				</MenuItem>
+				<MenuItem Header="关闭" HotKey="Ctrl+W" InputGesture="Ctrl+W" Name="menuClose" />
+			</MenuItem>
+			<MenuItem Header="视图">
+				<MenuItem Header="按名称搜索" HotKey="Ctrl+F" InputGesture="Ctrl+F" Name="menuSearchByName" />
+				<MenuItem Header="继续搜索" InputGesture="F3" Name="menuContinueSearch" />
+				<MenuItem Header="前往资产" HotKey="Ctrl+G" InputGesture="Ctrl+G" Name="menuGoToAsset" />
+				<MenuItem Header="筛选" HotKey="Ctrl+E" InputGesture="Ctrl+E" Name="menuFilter" />
+			</MenuItem>
+			<MenuItem Header="工具">
+				<MenuItem Header="信息" HotKey="F4" InputGesture="F4" Name="menuInfo" />
+				<MenuItem Header="类型树" HotKey="F5" InputGesture="F5" Name="menuTypeTree" />
+				<MenuItem Header="依赖项" HotKey="F6" InputGesture="F6" Name="menuDependencies" />
+				<MenuItem Header="脚本" HotKey="F7" InputGesture="F7" Name="menuScripts" />
+				<MenuItem Header="场景层次结构" HotKey="F8" InputGesture="F8" Name="menuHierarchy" />
+			</MenuItem>
     </Menu>
-    <TextBlock Margin="10,32,10,0" VerticalAlignment="Top" Text="Assets" />
+    <TextBlock Margin="10,32,10,0" VerticalAlignment="Top" Text="资产" />
     <Border Margin="10,53,200,10" BorderBrush="Black" BorderThickness="1">
       <DataGrid AutoGenerateColumns="False" CanUserResizeColumns="True" IsReadOnly="True" Name="dataGrid">
         <DataGrid.RowTheme>
@@ -57,39 +57,39 @@
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
           </DataGridTemplateColumn>
-          <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-          <DataGridTextColumn Header="Container" Binding="{Binding Container}"/>
-          <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
-          <DataGridTextColumn Header="File ID" Binding="{Binding FileID}"/>
-          <DataGridTextColumn Header="Path ID" Binding="{Binding PathID}"/>
-          <DataGridTextColumn Header="Size" Binding="{Binding Size}"/>
-          <DataGridTextColumn Header="Modified" Binding="{Binding Modified}"/>
+			<DataGridTextColumn Header="名称" Binding="{Binding Name}"/>
+			<DataGridTextColumn Header="容器" Binding="{Binding Container}"/>
+			<DataGridTextColumn Header="类型" Binding="{Binding Type}"/>
+			<DataGridTextColumn Header="文件ID" Binding="{Binding FileID}"/>
+			<DataGridTextColumn Header="路径ID" Binding="{Binding PathID}"/>
+			<DataGridTextColumn Header="大小" Binding="{Binding Size}"/>
+			<DataGridTextColumn Header="修改日期" Binding="{Binding Modified}"/>
         </DataGrid.Columns>
       </DataGrid>
     </Border>
     <StackPanel Margin="0,53,10,10" HorizontalAlignment="Right" Width="185">
-      <Label Content="Name"/>
-      <TextBox TextWrapping="WrapWithOverflow" Text="" IsReadOnly="True" Name="boxName" />
-      <Label Content="Path ID"/>
-      <TextBox TextWrapping="WrapWithOverflow" Text="" IsReadOnly="True" Name="boxPathId" />
-      <Label Content="File ID"/>
-      <TextBox TextWrapping="WrapWithOverflow" Text="" IsReadOnly="True" Name="boxFileId" />
-      <Label Content="Type"/>
+	    <Label Content="名称"/>
+	    <TextBox TextWrapping="WrapWithOverflow" Text="" IsReadOnly="True" Name="boxName" />
+	    <Label Content="路径ID"/>
+	    <TextBox TextWrapping="WrapWithOverflow" Text="" IsReadOnly="True" Name="boxPathId" />
+	    <Label Content="文件ID"/>
+	    <TextBox TextWrapping="WrapWithOverflow" Text="" IsReadOnly="True" Name="boxFileId" />
+	    <Label Content="类型"/>
       <TextBox TextWrapping="WrapWithOverflow" Text="" IsReadOnly="True" Name="boxType" />
       <UniformGrid Columns="2"  >
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="View Data" Name="btnViewData" Margin="5"/>
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="View Scene" Name="btnSceneView" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="查看数据" Name="btnViewData" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="查看场景" Name="btnSceneView" Margin="5"/>
 
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Import Raw" Name="btnImportRaw" Margin="5"/>
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Export Raw" Name="btnExportRaw" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="导入原始" Name="btnImportRaw" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="导出原始" Name="btnExportRaw" Margin="5"/>
 
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Import Dump" Name="btnImportDump" Margin="5"/>
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Export Dump" Name="btnExportDump" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="导入转储" Name="btnImportDump" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="导出转储" Name="btnExportDump" Margin="5"/>
 
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Edit Data" Name="btnEditData" Margin="5"/>
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Remove" Name="btnRemove" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="编辑数据" Name="btnEditData" Margin="5"/>
+        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="删除" Name="btnRemove" Margin="5"/>
       </UniformGrid>
-      <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Plugins" Name="btnPlugin" Margin="5"/>
+      <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="插件" Name="btnPlugin" Margin="5"/>
 
     </StackPanel>
   </Grid>

@@ -7,7 +7,7 @@
         Width="300" Height="400"
         Icon="/Assets/uabeavalonia16.ico"
         x:Class="UABEAvalonia.LoadModPackageDialog"
-        Title="Load Package"
+        Title="加载包文件"
         WindowStartupLocation="CenterOwner">
   <Grid Margin="10,10,10,10">
     <Grid Margin="0,0,0,31">
@@ -22,7 +22,7 @@
         <RowDefinition Height="26"></RowDefinition>
       </Grid.RowDefinitions>
       <!-- temporary until I can get checkboxes working -->
-      <Label Grid.Row="0">Changes (double click to select)</Label>
+      <Label Grid.Row="0">更改(双击选择)</Label>
       <TreeView Grid.Row="1" Grid.ColumnSpan="2" Name="treeView">
         <TreeView.DataTemplates>
           <TreeDataTemplate DataType="ua:LoadModPackageTreeFileInfo" ItemsSource="{Binding Replacers}">
@@ -30,17 +30,17 @@
           </TreeDataTemplate>
         </TreeView.DataTemplates>
       </TreeView>
-      <Label Grid.Row="2">Base folder</Label>
+      <Label Grid.Row="2">基础文件夹</Label>
       <TextBox Grid.Row="3" Name="boxBaseFolder"></TextBox>
-      <Button Grid.Column="1" Grid.Row="3" Name="btnBaseFolder">Select</Button>
+      <Button Grid.Column="1" Grid.Row="3" Name="btnBaseFolder">选择</Button>
     </Grid>
     <Grid Margin="0,0,0,0" VerticalAlignment="Bottom">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <Button Grid.Column="0" Name="btnOk">Ok</Button>
-      <Button Grid.Column="1" Name="btnCancel">Cancel</Button>
+      <Button Grid.Column="0" Name="btnOk">确定</Button>
+      <Button Grid.Column="1" Name="btnCancel">取消</Button>
     </Grid>
   </Grid>
 </Window>

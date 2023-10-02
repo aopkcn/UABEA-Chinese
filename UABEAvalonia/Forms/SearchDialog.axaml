@@ -6,7 +6,7 @@
         Width="300" Height="120"
         Icon="/Assets/uabeavalonia16.ico"
         x:Class="UABEAvalonia.SearchDialog"
-        Title="Search"
+        Title="搜索"
         WindowStartupLocation="CenterOwner">
   <Grid Margin="10,10,10,10">
     <Grid VerticalAlignment="Top">
@@ -19,14 +19,14 @@
         <RowDefinition Height="Auto" />
         <RowDefinition Height="Auto" />
       </Grid.RowDefinitions>
-      <Label Grid.Column="0" Grid.Row="0">Name</Label>
+      <Label Grid.Column="0" Grid.Row="0">名称</Label>
       <TextBox Grid.Column="1" Grid.Row="0" Name="boxName"></TextBox>
-      <Label Grid.Column="0" Grid.Row="1">Direction</Label>
+      <Label Grid.Column="0" Grid.Row="1">方向</Label>
       <StackPanel Orientation="Horizontal" Spacing="10" Grid.Column="1" Grid.Row="1">
-        <RadioButton GroupName="rdoSearchDir" Name="rdoSearchUp">Up</RadioButton>
-        <RadioButton GroupName="rdoSearchDir" IsChecked="True" Name="rdoSearchDown">Down</RadioButton>
+        <RadioButton GroupName="rdoSearchDir" Name="rdoSearchUp">向上</RadioButton>
+        <RadioButton GroupName="rdoSearchDir" IsChecked="True" Name="rdoSearchDown">向下</RadioButton>
       </StackPanel>
-      <Label Grid.Column="0" Grid.Row="2">Case sensitive</Label>
+      <Label Grid.Column="0" Grid.Row="2">区分大小写</Label>
       <CheckBox Grid.Column="1" Grid.Row="2" Name="chkCaseSensitive"></CheckBox>
     </Grid> 
     <Grid VerticalAlignment="Bottom">
@@ -34,8 +34,8 @@
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <Button Grid.Column="0" Name="btnOk">Ok</Button>
-      <Button Grid.Column="1" Name="btnCancel">Cancel</Button>
+      <Button Grid.Column="0" Name="btnOk">确定</Button>
+      <Button Grid.Column="1" Name="btnCancel">取消</Button>
     </Grid>
   </Grid>
 </Window>

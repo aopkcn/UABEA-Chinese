@@ -6,18 +6,18 @@
         Width="240" Height="100"
         Icon="/Assets/uabeavalonia16.ico"
         x:Class="UABEAvalonia.ImportSerializedDialog"
-        Title="Import"
+        Title="导入"
         CanResize="False"
         WindowStartupLocation="CenterOwner">
   <Grid>
-    <TextBlock Margin="10,20,10,0" VerticalAlignment="Top" Text="Is this asset serialized ?" TextAlignment="Center" FontWeight="Bold" FontSize="14" />
+    <TextBlock Margin="10,20,10,0" VerticalAlignment="Top" Text="这个资源是否已序列化？" TextAlignment="Center" FontWeight="Bold" FontSize="14" />
     <Grid Margin="10,10,10,10" VerticalAlignment="Bottom">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <Button Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnYes">Yes</Button>
-      <Button Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnNo">No</Button>
+      <Button Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnYes">是</Button>
+      <Button Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnNo">否</Button>
     </Grid>
   </Grid>
 </Window>

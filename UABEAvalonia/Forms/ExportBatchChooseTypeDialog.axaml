@@ -6,7 +6,7 @@
         Width="240" Height="100"
         Icon="/Assets/uabeavalonia16.ico"
         x:Class="UABEAvalonia.ExportBatchChooseTypeDialog"
-        Title="Batch Export"
+        Title="批量导出"
         CanResize="False"
         WindowStartupLocation="CenterOwner">
   <Grid>
@@ -19,8 +19,8 @@
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <Button Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnOk">Ok</Button>
-      <Button Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnCancel">Cancel</Button>
+      <Button Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnOk">确定</Button>
+      <Button Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnCancel">取消</Button>
     </Grid>
   </Grid>
 </Window>
