@@ -1,4 +1,4 @@
-using AssetsTools.NET;
+ï»¿using AssetsTools.NET;
 using AssetsTools.NET.Extra;
 using Avalonia;
 using Avalonia.Controls;
@@ -80,7 +80,7 @@ namespace UABEAvalonia
             }
             else
             {
-                await MessageBoxUtil.ShowDialog(this, "´íÎó", "exe È±ÉÙ classdata.tpk ÎÄ¼ş¡£\nÇëÈ·±£Ëü´æÔÚ¡£");
+                await MessageBoxUtil.ShowDialog(this, "é”™è¯¯", "exe ç¼ºå°‘ classdata.tpk æ–‡ä»¶ã€‚\nè¯·ç¡®ä¿å®ƒå­˜åœ¨ã€‚");
                 Close();
                 Environment.Exit(1);
             }
@@ -143,8 +143,8 @@ namespace UABEAvalonia
                 if (openInfoWindows.Count > 0)
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "¾¯¸æ", "Äú²»ÄÜÍ¬Ê±´ò¿ªÁ½¸öĞÅÏ¢´°¿Ú¡£" +
-                               "Èç¹ûÄúÏëÍ¬Ê±´ò¿ªÁ½¸ö²»Í¬ÓÎÏ·µÄÎÄ¼ş£¬Çë¿¼ÂÇ´ò¿ªÁ½¸öµ¥¶ÀµÄ UABEA ´°¿Ú¡£");
+                        "è­¦å‘Š", "æ‚¨ä¸èƒ½åŒæ—¶æ‰“å¼€ä¸¤ä¸ªä¿¡æ¯çª—å£ã€‚" +
+                               "å¦‚æœæ‚¨æƒ³åŒæ—¶æ‰“å¼€ä¸¤ä¸ªä¸åŒæ¸¸æˆçš„æ–‡ä»¶ï¼Œè¯·è€ƒè™‘æ‰“å¼€ä¸¤ä¸ªå•ç‹¬çš„ UABEA çª—å£ã€‚");
 
                     return;
                 }
@@ -176,7 +176,7 @@ namespace UABEAvalonia
             }
             else
             {
-                await MessageBoxUtil.ShowDialog(this, "´íÎó", "ÕâËÆºõ²»ÊÇÒ»¸ö×Ê²úÎÄ¼ş»òÀ¦°ó°ü¡£");
+                await MessageBoxUtil.ShowDialog(this, "é”™è¯¯", "è¿™ä¼¼ä¹ä¸æ˜¯ä¸€ä¸ªèµ„äº§æ–‡ä»¶æˆ–æ†ç»‘åŒ…ã€‚");
             }
         }
 
@@ -194,10 +194,10 @@ namespace UABEAvalonia
         {
             var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "´ò¿ª×ÊÔ´»òÀ¦°óÎÄ¼ş",
+                Title = "æ‰“å¼€èµ„æºæˆ–æ†ç»‘æ–‡ä»¶",
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("È«²¿ÎÄ¼ş") { Patterns = new List<string>() { "*" } }
+                    new FilePickerFileType("å…¨éƒ¨æ–‡ä»¶") { Patterns = new List<string>() { "*" } }
                 },
                 AllowMultiple = true
             });
@@ -215,7 +215,7 @@ namespace UABEAvalonia
             {
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("UABE Ä£×é°²×°°ü") { Patterns = new List<string>() { "*.emip" } }
+                    new FilePickerFileType("UABE æ¨¡ç»„å®‰è£…åŒ…") { Patterns = new List<string>() { "*.emip" } }
                 }
             });
 
@@ -238,7 +238,7 @@ namespace UABEAvalonia
         private void MenuAuthor_Click(object? sender, RoutedEventArgs e)
         {
             string url = "https://www.aopk.cn/author/1";    
-            // ´ò¿ªÄ¬ÈÏµÄä¯ÀÀÆ÷·ÃÎÊÖ¸¶¨µÄ URL
+            // æ‰“å¼€é»˜è®¤çš„æµè§ˆå™¨è®¿é—®æŒ‡å®šçš„ URL
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {
                 FileName = url,
@@ -248,7 +248,7 @@ namespace UABEAvalonia
         private void MenuAopk_Click(object? sender, RoutedEventArgs e)
         {
             string url = "https://www.aopk.cn/16968.html";
-            // ´ò¿ªÄ¬ÈÏµÄä¯ÀÀÆ÷·ÃÎÊÖ¸¶¨µÄ URL
+            // æ‰“å¼€é»˜è®¤çš„æµè§ˆå™¨è®¿é—®æŒ‡å®šçš„ URL
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {
                 FileName = url,
@@ -293,7 +293,7 @@ namespace UABEAvalonia
 
             var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
             {
-                Title = "Áí´æÎª...",
+                Title = "å¦å­˜ä¸º...",
                 SuggestedFileName = item.Name
             });
 
@@ -314,10 +314,10 @@ namespace UABEAvalonia
             {
                 var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
                 {
-                    Title = "´ò¿ª",
+                    Title = "æ‰“å¼€",
                     FileTypeFilter = new List<FilePickerFileType>()
                     {
-                        new FilePickerFileType("È«²¿ÎÄ¼ş") { Patterns = new List<string>() { "*" } }
+                        new FilePickerFileType("å…¨éƒ¨æ–‡ä»¶") { Patterns = new List<string>() { "*" } }
                     }
                 });
 
@@ -407,12 +407,12 @@ namespace UABEAvalonia
                 if (item.IsSerialized)
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "´íÎó", "ÕâËÆºõ²»ÊÇÒ»¸öÓĞĞ§µÄ×Ê²úÎÄ¼ş£¬¾¡¹Ü¸Ã×Ê²úÒÑĞòÁĞ»¯¡£Ò²ĞíÎÄ¼şÒÑËğ»µ»ò°æ±¾¹ıĞÂ£¿");
+                        "é”™è¯¯", "è¿™ä¼¼ä¹ä¸æ˜¯ä¸€ä¸ªæœ‰æ•ˆçš„èµ„äº§æ–‡ä»¶ï¼Œå°½ç®¡è¯¥èµ„äº§å·²åºåˆ—åŒ–ã€‚ä¹Ÿè®¸æ–‡ä»¶å·²æŸåæˆ–ç‰ˆæœ¬è¿‡æ–°ï¼Ÿ");
                 }
                 else
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "´íÎó", "ÕâËÆºõ²»ÊÇÒ»¸öÓĞĞ§µÄ×Ê²úÎÄ¼ş¡£Èç¹ûÄúÏëµ¼³ö·Ç×Ê²úÎÄ¼ş£¬ÇëÊ¹ÓÃµ¼³ö¹¦ÄÜ¡£");
+                        "é”™è¯¯", "è¿™ä¼¼ä¹ä¸æ˜¯ä¸€ä¸ªæœ‰æ•ˆçš„èµ„äº§æ–‡ä»¶ã€‚å¦‚æœæ‚¨æƒ³å¯¼å‡ºéèµ„äº§æ–‡ä»¶ï¼Œè¯·ä½¿ç”¨å¯¼å‡ºåŠŸèƒ½ã€‚");
                 }
             }
         }
@@ -424,7 +424,7 @@ namespace UABEAvalonia
 
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Ñ¡Ôñµ¼³öÄ¿Â¼"
+                Title = "é€‰æ‹©å¯¼å‡ºç›®å½•"
             });
 
             string[]? selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -465,7 +465,7 @@ namespace UABEAvalonia
 
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Ñ¡Ôñµ¼ÈëÄ¿Â¼"
+                Title = "é€‰æ‹©å¯¼å…¥ç›®å½•"
             });
 
             string[]? selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -543,8 +543,8 @@ namespace UABEAvalonia
             bool useCpp2Il = !ConfigurationManager.Settings.UseCpp2Il;
             ConfigurationManager.Settings.UseCpp2Il = useCpp2Il;
 
-            await MessageBoxUtil.ShowDialog(this, "×¢Òâ",
-                $"Cpp2Il Ê¹ÓÃ×´Ì¬£º{useCpp2Il.ToString().ToLower()}");
+            await MessageBoxUtil.ShowDialog(this, "æ³¨æ„",
+                $"Cpp2Il ä½¿ç”¨çŠ¶æ€ï¼š{useCpp2Il.ToString().ToLower()}");
         }
 
         private async void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
@@ -641,7 +641,7 @@ namespace UABEAvalonia
                 {
                     var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                     {
-                        Title = "Áí´æÎª..."
+                        Title = "å¦å­˜ä¸º..."
                     });
 
                     string? selectedFilePath = FileDialogUtils.GetSaveFileDialogFile(selectedFile);
@@ -651,7 +651,7 @@ namespace UABEAvalonia
                     if (Path.GetFullPath(selectedFilePath) == Path.GetFullPath(BundleInst.path))
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "ÎÄ¼şÕıÔÚÊ¹ÓÃÖĞ", "ÇëÊ¹ÓÃ¡°ÎÄ¼ş¡± > ¡°±£´æ¡±À´¸²¸Çµ±Ç°´ò¿ªµÄ°üÎÄ¼ş¡£");
+                            "æ–‡ä»¶æ­£åœ¨ä½¿ç”¨ä¸­", "è¯·ä½¿ç”¨â€œæ–‡ä»¶â€ > â€œä¿å­˜â€æ¥è¦†ç›–å½“å‰æ‰“å¼€çš„åŒ…æ–‡ä»¶ã€‚");
                         return;
                     }
 
@@ -662,7 +662,7 @@ namespace UABEAvalonia
                     catch (Exception ex)
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "Ğ´ÈëÒì³£", "ÔÚĞ´ÈëÎÄ¼şÊ±³öÏÖÎÊÌâ£º\n" + ex.ToString());
+                            "å†™å…¥å¼‚å¸¸", "åœ¨å†™å…¥æ–‡ä»¶æ—¶å‡ºç°é—®é¢˜ï¼š\n" + ex.ToString());
                     }
                 }
                 else
@@ -674,7 +674,7 @@ namespace UABEAvalonia
                     catch (Exception ex)
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "Ğ´ÈëÒì³£", "ÔÚĞ´ÈëÎÄ¼şÊ±³öÏÖÎÊÌâ£º\n" + ex.ToString());
+                            "å†™å…¥å¼‚å¸¸", "åœ¨å†™å…¥æ–‡ä»¶æ—¶å‡ºç°é—®é¢˜ï¼š\n" + ex.ToString());
                     }
                 }
             }
@@ -685,7 +685,7 @@ namespace UABEAvalonia
             if (changesUnsaved && BundleInst != null)
             {
                 MessageBoxResult choice = await MessageBoxUtil.ShowDialog(this,
-                    "ÒÑ×ö³ö¸ü¸Ä", "ÄúÒÑĞŞ¸Ä´ËÎÄ¼ş¡£ÊÇ·ñÒª±£´æ£¿",
+                    "å·²åšå‡ºæ›´æ”¹", "æ‚¨å·²ä¿®æ”¹æ­¤æ–‡ä»¶ã€‚æ˜¯å¦è¦ä¿å­˜ï¼Ÿ",
                     MessageBoxType.YesNo);
                 if (choice == MessageBoxResult.Yes)
                 {
@@ -707,19 +707,19 @@ namespace UABEAvalonia
                     if (changesUnsaved)
                     {
                         messageBoxTest =
-                            "ÄúÒÑ¾­ĞŞ¸ÄÁË´ËÎÄ¼ş£¬µ«ÉĞÎ´½«´ËÀ¦°óÎÄ¼ş±£´æµ½´ÅÅÌ¡£ \n" +
-                            "Èç¹ûÄúÒªÑ¹Ëõ´øÓĞ¸ü¸ÄµÄÎÄ¼ş£¬ÇëÁ¢¼´±£´æ´ËÀ¦°óÎÄ¼ş²¢´ò¿ª¸ÃÎÄ¼ş¡£ \n" +
-                            "µ¥»÷¡°È·¶¨¡±ÒÔÑ¹Ëõ²»´ø¸ü¸ÄµÄÎÄ¼ş¡£";
+                            "æ‚¨å·²ç»ä¿®æ”¹äº†æ­¤æ–‡ä»¶ï¼Œä½†å°šæœªå°†æ­¤æ†ç»‘æ–‡ä»¶ä¿å­˜åˆ°ç£ç›˜ã€‚ \n" +
+                            "å¦‚æœæ‚¨è¦å‹ç¼©å¸¦æœ‰æ›´æ”¹çš„æ–‡ä»¶ï¼Œè¯·ç«‹å³ä¿å­˜æ­¤æ†ç»‘æ–‡ä»¶å¹¶æ‰“å¼€è¯¥æ–‡ä»¶ã€‚ \n" +
+                            "å•å‡»â€œç¡®å®šâ€ä»¥å‹ç¼©ä¸å¸¦æ›´æ”¹çš„æ–‡ä»¶ã€‚";
                     }
                     else
                     {
                         messageBoxTest =
-                            "ÄúÒÑ¾­ĞŞ¸ÄÁË´ËÎÄ¼ş£¬µ«Ö»ÓĞÔÚ½øĞĞ¸ü¸ÄÖ®Ç°µÄ¾ÉÎÄ¼şÒÑ´ò¿ª¡£ \n" +
-                            "Èç¹ûÄúÒªÑ¹Ëõ´øÓĞ¸ü¸ÄµÄÎÄ¼ş£¬Çë¹Ø±Õ´ËÀ¦°óÎÄ¼ş²¢´ò¿ªÄú±£´æµÄÎÄ¼ş¡£ µ¥»÷¡°È·¶¨¡±ÒÔÑ¹Ëõ²»´ø¸ü¸ÄµÄÎÄ¼ş¡£";
+                            "æ‚¨å·²ç»ä¿®æ”¹äº†æ­¤æ–‡ä»¶ï¼Œä½†åªæœ‰åœ¨è¿›è¡Œæ›´æ”¹ä¹‹å‰çš„æ—§æ–‡ä»¶å·²æ‰“å¼€ã€‚ \n" +
+                            "å¦‚æœæ‚¨è¦å‹ç¼©å¸¦æœ‰æ›´æ”¹çš„æ–‡ä»¶ï¼Œè¯·å…³é—­æ­¤æ†ç»‘æ–‡ä»¶å¹¶æ‰“å¼€æ‚¨ä¿å­˜çš„æ–‡ä»¶ã€‚ å•å‡»â€œç¡®å®šâ€ä»¥å‹ç¼©ä¸å¸¦æ›´æ”¹çš„æ–‡ä»¶ã€‚";
                     }
 
                     MessageBoxResult continueWithChanges = await MessageBoxUtil.ShowDialog(
-                        this, "×¢Òâ", messageBoxTest,
+                        this, "æ³¨æ„", messageBoxTest,
                         MessageBoxType.OKCancel);
 
                     if (continueWithChanges == MessageBoxResult.Cancel)
@@ -730,7 +730,7 @@ namespace UABEAvalonia
 
                 var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                 {
-                    Title = "Áí´æÎª..."
+                    Title = "å¦å­˜ä¸º..."
                 });
 
                 string? selectedFilePath = FileDialogUtils.GetSaveFileDialogFile(selectedFile);
@@ -740,15 +740,15 @@ namespace UABEAvalonia
                 if (Path.GetFullPath(selectedFilePath) == Path.GetFullPath(BundleInst.path))
                 {
                     await MessageBoxUtil.ShowDialog(this,
-                        "ÎÄ¼şÕıÔÚÊ¹ÓÃÖĞ", "ÓÉÓÚ´ËÎÄ¼şÒÑÔÚ UABEA ÖĞ´ò¿ª£¬Äú±ØĞëÑ¡ÔñÒ»¸öĞÂµÄÎÄ¼şÃû£¨±§Ç¸£¡£©");
+                        "æ–‡ä»¶æ­£åœ¨ä½¿ç”¨ä¸­", "ç”±äºæ­¤æ–‡ä»¶å·²åœ¨ UABEA ä¸­æ‰“å¼€ï¼Œæ‚¨å¿…é¡»é€‰æ‹©ä¸€ä¸ªæ–°çš„æ–‡ä»¶åï¼ˆæŠ±æ­‰ï¼ï¼‰");
                     return;
                 }
 
                 const string lz4Option = "LZ4";
                 const string lzmaOption = "LZMA";
-                const string cancelOption = "È¡Ïû";
+                const string cancelOption = "å–æ¶ˆ";
                 string result = await MessageBoxUtil.ShowDialogCustom(
-                    this, "ÌáÊ¾", "ÄúÏëÊ¹ÓÃÄÄÖÖÑ¹Ëõ·½·¨£¿\nLZ4£ºËÙ¶È¸ü¿ìµ«ÎÄ¼ş´óĞ¡½Ï´ó\nLZMA£ºËÙ¶È½ÏÂıµ«ÎÄ¼ş´óĞ¡½ÏĞ¡",
+                    this, "æç¤º", "æ‚¨æƒ³ä½¿ç”¨å“ªç§å‹ç¼©æ–¹æ³•ï¼Ÿ\nLZ4ï¼šé€Ÿåº¦æ›´å¿«ä½†æ–‡ä»¶å¤§å°è¾ƒå¤§\nLZMAï¼šé€Ÿåº¦è¾ƒæ…¢ä½†æ–‡ä»¶å¤§å°è¾ƒå°",
                     lz4Option, lzmaOption, cancelOption);
 
                 AssetBundleCompressionType compType = result switch
@@ -760,7 +760,7 @@ namespace UABEAvalonia
 
                 if (compType != AssetBundleCompressionType.None)
                 {
-                    ProgressWindow progressWindow = new ProgressWindow("ÕıÔÚÑ¹Ëõ...");
+                    ProgressWindow progressWindow = new ProgressWindow("æ­£åœ¨å‹ç¼©...");
 
                     Thread thread = new Thread(new ParameterizedThreadStart(CompressBundle));
                     object[] threadArgs =
@@ -777,21 +777,21 @@ namespace UABEAvalonia
             }
             else
             {
-                await MessageBoxUtil.ShowDialog(this, "ÌáÊ¾", "ÇëÔÚÊ¹ÓÃÑ¹ËõÇ°´ò¿ªÒ»¸öÀ¦°óÎÄ¼ş¡£");
+                await MessageBoxUtil.ShowDialog(this, "æç¤º", "è¯·åœ¨ä½¿ç”¨å‹ç¼©å‰æ‰“å¼€ä¸€ä¸ªæ†ç»‘æ–‡ä»¶ã€‚");
             }
         }
 
         private async Task<string?> AskLoadSplitFile(string fileToSplit)
         {
             MessageBoxResult splitRes = await MessageBoxUtil.ShowDialog(this,
-                "¼ì²âµ½²ğ·ÖÎÄ¼ş", "´ËÎÄ¼şÒÔ .split0 ½áÎ²¡£ÊÇ·ñ´´½¨ºÏ²¢ÎÄ¼ş£¿\n",
+                "æ£€æµ‹åˆ°æ‹†åˆ†æ–‡ä»¶", "æ­¤æ–‡ä»¶ä»¥ .split0 ç»“å°¾ã€‚æ˜¯å¦åˆ›å»ºåˆå¹¶æ–‡ä»¶ï¼Ÿ\n",
                 MessageBoxType.YesNoCancel);
 
             if (splitRes == MessageBoxResult.Yes)
             {
                 var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                 {
-                    Title = "Ñ¡ÔñºÏ²¢ÎÄ¼şµÄÎ»ÖÃ",
+                    Title = "é€‰æ‹©åˆå¹¶æ–‡ä»¶çš„ä½ç½®",
                     SuggestedStartLocation = await StorageProvider.TryGetFolderFromPathAsync(Path.GetDirectoryName(fileToSplit)!),
                     SuggestedFileName = Path.GetFileName(fileToSplit[..^".split0".Length])
                 });
@@ -832,11 +832,11 @@ namespace UABEAvalonia
         {
             string decompSize = FileUtils.GetFormattedByteSize(GetBundleDataDecompressedSize(bundleInst.file));
 
-            const string fileOption = "ÎÄ¼ş";
-            const string memoryOption = "ÄÚ´æ";
-            const string cancelOption = "È¡Ïû";
+            const string fileOption = "æ–‡ä»¶";
+            const string memoryOption = "å†…å­˜";
+            const string cancelOption = "å–æ¶ˆ";
             string result = await MessageBoxUtil.ShowDialogCustom(
-                this, "×¢Òâ", "Õâ¸ö°üÒÑ¾­±»Ñ¹Ëõ¡£Òª½âÑ¹µ½ÎÄ¼ş»¹ÊÇÄÚ´æ£¿\n´óĞ¡£º" + decompSize,
+                this, "æ³¨æ„", "è¿™ä¸ªåŒ…å·²ç»è¢«å‹ç¼©ã€‚è¦è§£å‹åˆ°æ–‡ä»¶è¿˜æ˜¯å†…å­˜ï¼Ÿ\nå¤§å°ï¼š" + decompSize,
                 fileOption, memoryOption, cancelOption);
 
             if (result == fileOption)
@@ -846,10 +846,10 @@ namespace UABEAvalonia
                 {
                     var selectedFile = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions()
                     {
-                        Title = "Áí´æÎª...",
+                        Title = "å¦å­˜ä¸º...",
                         FileTypeChoices = new List<FilePickerFileType>()
                         {
-                            new FilePickerFileType("È«²¿ÎÄ¼ş") { Patterns = new List<string>() { "*" } }
+                            new FilePickerFileType("å…¨éƒ¨æ–‡ä»¶") { Patterns = new List<string>() { "*" } }
                         }
                     });
 
@@ -860,7 +860,7 @@ namespace UABEAvalonia
                     if (Path.GetFullPath(selectedFilePath) == Path.GetFullPath(bundleInst.path))
                     {
                         await MessageBoxUtil.ShowDialog(this,
-                            "ÎÄ¼şÒÑ±»Ê¹ÓÃ", "ÓÉÓÚ´ËÎÄ¼şÒÑÔÚ UABEA ÖĞ´ò¿ª£¬Äú±ØĞëÑ¡ÔñÒ»¸öĞÂµÄÎÄ¼şÃû£¨±§Ç¸£¡£©");
+                            "æ–‡ä»¶å·²è¢«ä½¿ç”¨", "ç”±äºæ­¤æ–‡ä»¶å·²åœ¨ UABEA ä¸­æ‰“å¼€ï¼Œæ‚¨å¿…é¡»é€‰æ‹©ä¸€ä¸ªæ–°çš„æ–‡ä»¶åï¼ˆæŠ±æ­‰ï¼ï¼‰");
                         continue;
                     }
                     else
@@ -1009,7 +1009,7 @@ namespace UABEAvalonia
 
             Workspace.Reset(null);
 
-            lblFileName.Text = "Äú»¹Ã»ÓĞ´ò¿ªÎÄ¼ş";
+            lblFileName.Text = "æ‚¨è¿˜æ²¡æœ‰æ‰“å¼€æ–‡ä»¶";
         }
 
         private void SetBundleControlsEnabled(bool enabled, bool hasAssets = false)

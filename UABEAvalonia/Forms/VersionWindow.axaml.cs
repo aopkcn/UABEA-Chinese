@@ -1,4 +1,4 @@
-using AssetsTools.NET.Extra;
+﻿using AssetsTools.NET.Extra;
 using Avalonia;
 using Avalonia.Controls;
 

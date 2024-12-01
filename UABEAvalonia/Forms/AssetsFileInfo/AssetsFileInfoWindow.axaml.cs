@@ -1,4 +1,4 @@
-using AssetsTools.NET;
+ï»¿using AssetsTools.NET;
 using AssetsTools.NET.Extra;
 using Avalonia;
 using Avalonia.Controls;
@@ -53,7 +53,7 @@ namespace UABEAvalonia
             dependenciesModified = new HashSet<AssetsFileInstance>();
 
             List<DependencyComboBoxItem> comboBoxFiles = new List<DependencyComboBoxItem>();
-            DependencyComboBoxItem allFilesItem = new DependencyComboBoxItem("µÚÒ»¸ö»òËùÓÐÎÄ¼þ", null);
+            DependencyComboBoxItem allFilesItem = new DependencyComboBoxItem("ç¬¬ä¸€ä¸ªæˆ–æ‰€æœ‰æ–‡ä»¶", null);
             comboBoxFiles.Add(allFilesItem);
 
             for (int i = 0; i < workspace.LoadedFiles.Count; i++)

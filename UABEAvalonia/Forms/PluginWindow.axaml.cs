@@ -1,4 +1,4 @@
-using AssetsTools.NET.Extra;
+ï»¿using AssetsTools.NET.Extra;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -54,7 +54,7 @@ namespace UABEAvalonia
             }
             catch (Exception ex)
             {
-                await MessageBoxUtil.ShowDialog(this, "²å¼şÒì³££¡", $"²å¼ş {menuPlugInf.displayName} ÒÑ±ÀÀ£¡£¶ÑÕ»¸ú×Ù:\n" + ex.ToString());
+                await MessageBoxUtil.ShowDialog(this, "æ’ä»¶å¼‚å¸¸ï¼", $"æ’ä»¶ {menuPlugInf.displayName} å·²å´©æºƒã€‚å †æ ˆè·Ÿè¸ª:\n" + ex.ToString());
             }
             Close(true);
         }

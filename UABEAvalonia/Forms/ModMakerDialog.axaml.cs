@@ -1,4 +1,4 @@
-using AssetsTools.NET;
+ï»¿using AssetsTools.NET;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -169,7 +169,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Ñ¡Ôñ»ù´¡ÎÄ¼ş¼Ğ"
+                Title = "é€‰æ‹©åŸºç¡€æ–‡ä»¶å¤¹"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -187,7 +187,7 @@ namespace UABEAvalonia
             {
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("UABE Mod °²×°³ÌĞò°ü") { Patterns = new List<string>() { "*.emip" } }
+                    new FilePickerFileType("UABE Mod å®‰è£…ç¨‹åºåŒ…") { Patterns = new List<string>() { "*.emip" } }
                 }
             });
 
@@ -202,7 +202,7 @@ namespace UABEAvalonia
 
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Ñ¡Ôñ»ù´¡ÎÄ¼ş¼Ğ"
+                Title = "é€‰æ‹©åŸºç¡€æ–‡ä»¶å¤¹"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -255,7 +255,7 @@ namespace UABEAvalonia
             {
                 FileTypeChoices = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType($"UABE Mod °²×°³ÌĞò°ü (*.emip)") { Patterns = new List<string>() { "*.emip" } }
+                    new FilePickerFileType($"UABE Mod å®‰è£…ç¨‹åºåŒ… (*.emip)") { Patterns = new List<string>() { "*.emip" } }
                 },
             });
 

@@ -1,4 +1,4 @@
-using AssetsTools.NET;
+ï»¿using AssetsTools.NET;
 using AssetsTools.NET.Extra;
 using Avalonia;
 using Avalonia.Controls;
@@ -65,13 +65,13 @@ namespace UABEAvalonia
 
             if (fileId < 0)
             {
-                await MessageBoxUtil.ShowDialog(this, "ÊäÈë´íÎó", "ÎÄ¼þÎÞÐ§¡£");
+                await MessageBoxUtil.ShowDialog(this, "è¾“å…¥é”™è¯¯", "æ–‡ä»¶æ— æ•ˆã€‚");
                 return;
             }
 
             if (!long.TryParse(pathIdText, out long pathId))
             {
-                await MessageBoxUtil.ShowDialog(this, "ÊäÈë´íÎó", "Â·¾¶ ID ÎÞÐ§¡£");
+                await MessageBoxUtil.ShowDialog(this, "è¾“å…¥é”™è¯¯", "è·¯å¾„ ID æ— æ•ˆã€‚");
                 return;
             }
 

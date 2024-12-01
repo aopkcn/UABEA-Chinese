@@ -1,4 +1,4 @@
-using AssetsTools.NET;
+锘縰sing AssetsTools.NET;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -52,7 +52,7 @@ namespace UABEAvalonia
             byte[]? data = impexp.ImportTextAsset(sr, out string? exceptionMessage);
             if (data == null)
             {
-                await MessageBoxUtil.ShowDialog(this, "编译错误", "导入时出现问题：\n" + exceptionMessage);
+                await MessageBoxUtil.ShowDialog(this, "缂栬瘧閿欒", "瀵煎叆鏃跺嚭鐜伴棶棰橈細\n" + exceptionMessage);
                 return;
             }
 

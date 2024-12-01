@@ -1,4 +1,4 @@
-using Avalonia;
+锘縰sing Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using System;
@@ -31,13 +31,13 @@ namespace UABEAvalonia
             {
                 stackPanel.Children.Remove(btn2);
                 stackPanel.Children.Remove(btn3);
-                btn1.Content = "确定";
+                btn1.Content = "纭畾";
             }
             else if (type == MessageBoxType.OKCancel)
             {
                 stackPanel.Children.Remove(btn3);
-                btn1.Content = "确定";
-                btn2.Content = "取消";
+                btn1.Content = "纭畾";
+                btn2.Content = "鍙栨秷";
             }
             else if (type == MessageBoxType.YesNo)
             {

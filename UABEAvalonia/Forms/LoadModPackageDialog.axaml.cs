@@ -1,4 +1,4 @@
-using AssetsTools.NET;
+ï»¿using AssetsTools.NET;
 using AssetsTools.NET.Extra;
 using Avalonia;
 using Avalonia.Controls;
@@ -50,7 +50,7 @@ namespace UABEAvalonia
         {
             var selectedFolders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
-                Title = "Ñ¡Ôñ»ù´¡ÎÄ¼ş¼Ğ"
+                Title = "é€‰æ‹©åŸºç¡€æ–‡ä»¶å¤¹"
             });
 
             string[] selectedFolderPaths = FileDialogUtils.GetOpenFolderDialogFiles(selectedFolders);
@@ -87,7 +87,7 @@ namespace UABEAvalonia
             if (fileInsts.Count == 0)
             {
                 await MessageBoxUtil.ShowDialog(this,
-                    "´íÎó", "Î´¼ÓÔØÈÎºÎÎÄ¼ş¡£ÄúÊÇ·ñÑ¡ÔñÁËÈÎºÎÎÄ¼ş£¨Ë«»÷£©»òÉèÖÃÁËÕıÈ·µÄ»ù±¾Â·¾¶£¿");
+                    "é”™è¯¯", "æœªåŠ è½½ä»»ä½•æ–‡ä»¶ã€‚æ‚¨æ˜¯å¦é€‰æ‹©äº†ä»»ä½•æ–‡ä»¶ï¼ˆåŒå‡»ï¼‰æˆ–è®¾ç½®äº†æ­£ç¡®çš„åŸºæœ¬è·¯å¾„ï¼Ÿ");
                 return;
             }
 

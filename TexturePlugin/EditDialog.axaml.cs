@@ -1,4 +1,4 @@
-using AssetsTools.NET;
+锘縰sing AssetsTools.NET;
 using AssetsTools.NET.Extra;
 using AssetsTools.NET.Texture;
 using Avalonia;
@@ -65,10 +65,10 @@ namespace TexturePlugin
         {
             var selectedFiles = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
             {
-                Title = "打开纹理",
+                Title = "鎵撳紑绾圭悊",
                 FileTypeFilter = new List<FilePickerFileType>()
                 {
-                    new FilePickerFileType("纹理文件") { Patterns = new List<string>() { "*.png", "*.tga" } }
+                    new FilePickerFileType("绾圭悊鏂囦欢") { Patterns = new List<string>() { "*.png", "*.tga" } }
                 }
             });
 
@@ -140,12 +140,12 @@ namespace TexturePlugin
 
             if (encImageBytes == null)
             {
-                string dialogText = $"无法编码纹理格式 {fmt}!";
+                string dialogText = $"鏃犳硶缂栫爜绾圭悊鏍煎紡 {fmt}!";
                 if (exceptionMessage != null)
                 {
                     dialogText += "\n" + exceptionMessage;
                 }
-                await MessageBoxUtil.ShowDialog(this, "错误", dialogText);
+                await MessageBoxUtil.ShowDialog(this, "閿欒", dialogText);
                 Close(false);
                 return;
             }
