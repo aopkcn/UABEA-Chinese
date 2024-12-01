@@ -49,8 +49,9 @@ namespace UABEAvalonia
             menuExit.Click += MenuExit_Click;
             menuToggleDarkTheme.Click += MenuToggleDarkTheme_Click;
             menuToggleCpp2Il.Click += MenuToggleCpp2Il_Click;
-            menuZygf.Click += MenuZygf_Click;
             menuAbout.Click += MenuAbout_Click;
+            menuAuthor.Click += MenuAuthor_Click;
+            menuAopk.Click += MenuAopk_Click;
             btnExport.Click += BtnExport_Click;
             btnImport.Click += BtnImport_Click;
             btnRemove.Click += BtnRemove_Click;
@@ -234,11 +235,25 @@ namespace UABEAvalonia
                 await dialog.ShowDialog(this);
             }
         }
-        private void MenuZygf_Click(object? sender, RoutedEventArgs e)
+        private void MenuAuthor_Click(object? sender, RoutedEventArgs e)
+        {
+            string url = "https://www.aopk.cn/author/1";    
+            // 打开默认的浏览器访问指定的 URL
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+        private void MenuAopk_Click(object? sender, RoutedEventArgs e)
         {
             string url = "https://www.aopk.cn/16968.html";
-            // 使用默认的 Web 浏览器打开指定的网址
-            System.Diagnostics.Process.Start("cmd.exe", "/c start " + url);
+            // 打开默认的浏览器访问指定的 URL
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
         }
         private void MenuAbout_Click(object? sender, RoutedEventArgs e)
         {

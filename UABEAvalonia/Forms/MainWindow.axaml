@@ -27,10 +27,12 @@
       </MenuItem>
       <MenuItem Header="帮助">
         <MenuItem Header="关于..." Name="menuAbout" />
+		<MenuItem Header="蝼蚁梦" Name="menuAuthor"/>
+		<MenuItem Header="汉化发布" Name="menuAopk" />
       </MenuItem>
     </Menu>
 
-    <TextBlock Margin="10,32,10,0" VerticalAlignment="Top" Text="未打开文件." TextAlignment="Center" FontWeight="Bold" FontSize="14" Name="lblFileName" />
+    <TextBlock Margin="10,32,10,0" VerticalAlignment="Top" Text="还没有打开文件" TextAlignment="Center" FontWeight="Bold" FontSize="14" Name="lblFileName" />
     <ComboBox Margin="10,56,10,0" VerticalAlignment="Top" Height="30" IsEnabled="False" Name="comboBox">
       <ComboBox.ItemTemplate>
         <DataTemplate>

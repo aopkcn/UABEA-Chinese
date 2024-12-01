@@ -339,7 +339,7 @@ namespace UABEAvalonia
                         AssetTypeValueField baseField = workspace.GetBaseField(cont);
                         TreeViewItem baseItem = CreateTreeItem($"{baseField.TypeName} {baseField.FieldName}");
 
-                        TreeViewItem arrayIndexTreeItem = CreateTreeItem("Loading...");
+                        TreeViewItem arrayIndexTreeItem = CreateTreeItem("加载中...");
                         baseItem.ItemsSource = new AvaloniaList<TreeViewItem>() { arrayIndexTreeItem };
                         item.ItemsSource = new AvaloniaList<TreeViewItem>() { baseItem };
                         SetTreeItemEvents(baseItem, cont.FileInstance, fromPathId, baseField);
@@ -438,7 +438,7 @@ namespace UABEAvalonia
 
                     if (hasChildren)
                     {
-                        TreeViewItem dummyItem = CreateTreeItem("Loading...");
+                        TreeViewItem dummyItem = CreateTreeItem("加载中...");
                         childTreeItem.ItemsSource = new AvaloniaList<TreeViewItem>() { dummyItem };
                         SetTreeItemEvents(childTreeItem, fromFile, fromPathId, childField);
                     }
@@ -478,7 +478,7 @@ namespace UABEAvalonia
 
                                 TreeViewItem refObjectItem = CreateColorTreeItem("ReferencedObjectData", "data");
 
-                                TreeViewItem dummyItem = CreateTreeItem("Loading...");
+                                TreeViewItem dummyItem = CreateTreeItem("加载中...");
                                 refObjectItem.ItemsSource = new AvaloniaList<TreeViewItem> { dummyItem };
                                 SetTreeItemEvents(refObjectItem, fromFile, fromPathId, refObj.data);
 
@@ -525,7 +525,7 @@ namespace UABEAvalonia
                     
                     if (hasChildren)
                     {
-                        TreeViewItem dummyItem = CreateTreeItem("Loading...");
+                        TreeViewItem dummyItem = CreateTreeItem("加载中...");
                         childTreeItem.ItemsSource = new AvaloniaList<TreeViewItem> { dummyItem };
                         SetTreeItemEvents(childTreeItem, fromFile, fromPathId, childField);
                     }
@@ -549,7 +549,7 @@ namespace UABEAvalonia
                     TreeViewItem childTreeItem = CreateTreeItem("[view asset]");
                     items.Add(childTreeItem);
 
-                    TreeViewItem dummyItem = CreateTreeItem("Loading...");
+                    TreeViewItem dummyItem = CreateTreeItem("加载中...");
                     childTreeItem.ItemsSource = new AvaloniaList<TreeViewItem> { dummyItem };
                     SetPPtrEvents(childTreeItem, fromFile, pathId, cont);
                 }

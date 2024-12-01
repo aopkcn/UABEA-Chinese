@@ -42,14 +42,14 @@ namespace UABEAvalonia
             {
                 treeTypeTreeNode.ItemsSource = new List<string>()
                 {
-                    "There is no type tree data available."
+                    "没有可用的类型树数据。"
                 };
             }
             else
             {
                 treeTypeTreeNode.ItemsSource = new List<string>()
                 {
-                    "Select a type to show the type tree data."
+                    "请选择一个类型以显示类型树数据。"
                 };
             }
 

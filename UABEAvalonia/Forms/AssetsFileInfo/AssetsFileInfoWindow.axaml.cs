@@ -53,7 +53,7 @@ namespace UABEAvalonia
             dependenciesModified = new HashSet<AssetsFileInstance>();
 
             List<DependencyComboBoxItem> comboBoxFiles = new List<DependencyComboBoxItem>();
-            DependencyComboBoxItem allFilesItem = new DependencyComboBoxItem("First or all files", null);
+            DependencyComboBoxItem allFilesItem = new DependencyComboBoxItem("第一个或所有文件", null);
             comboBoxFiles.Add(allFilesItem);
 
             for (int i = 0; i < workspace.LoadedFiles.Count; i++)

@@ -2,7 +2,7 @@
 
 **快速下载:**
 
-[最新夜间版本 (Windows)](https://nightly.link/nesrak1/UABEA/workflows/dotnet-desktop/master/uabea-windows.zip) | [最新夜间版本 (Linux)](https://nightly.link/nesrak1/UABEA/workflows/dotnet-ubuntu/master/uabea-ubuntu.zip) | [最新发布版](https://github.com/nesrak1/UABEA/releases)
+[最新临时版本 (Windows)](https://nightly.link/aopkcn/UABEA-Chinese/workflows/dotnet-desktop/master/uabea-windows.zip) | [最新临时版本 (Linux)](https://nightly.link/aopkcn/UABEA-Chinese/workflows/dotnet-ubuntu/master/uabea-ubuntu.zip) | [最新发布版](https://github.com/aopkcn/UABEA-Chinese/releases)
 
 [![GitHub问题](https://img.shields.io/github/issues/nesrak1/UABEA?logo=GitHub&style=flat-square)](https://github.com/nesrak1/UABEA/issues) [![discord](https://img.shields.io/discord/862035581491478558?label=discord&logo=discord&logoColor=FFFFFF&style=flat-square)](https://discord.gg/hd9VdswwZs)
 

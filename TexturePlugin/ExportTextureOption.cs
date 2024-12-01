@@ -18,9 +18,9 @@ namespace TexturePlugin
         public bool SelectionValidForPlugin(AssetsManager am, UABEAPluginAction action, List<AssetContainer> selection, out string name)
         {
             if (selection.Count > 1)
-                name = "Batch export textures";
+                name = "批量导出纹理";
             else
-                name = "Export texture";
+                name = "导出纹理";
 
             if (action != UABEAPluginAction.Export)
                 return false;
@@ -85,7 +85,7 @@ namespace TexturePlugin
                 if (!TextureHelper.GetResSTexture(texFile, cont.FileInstance))
                 {
                     string resSName = Path.GetFileName(texFile.m_StreamData.path);
-                    errorBuilder.AppendLine($"[{errorAssetName}]: resS was detected but {resSName} was not found in bundle");
+                    errorBuilder.AppendLine($"[{errorAssetName}]: 已检测到 resS，但在包中未找到 {resSName}");
                     continue;
                 }
 
@@ -94,7 +94,7 @@ namespace TexturePlugin
                 if (data == null)
                 {
                     string resSName = Path.GetFileName(texFile.m_StreamData.path);
-                    errorBuilder.AppendLine($"[{errorAssetName}]: resS was detected but {resSName} was not found on disk");
+                    errorBuilder.AppendLine($"[{errorAssetName}]: 已检测到 resS，但在磁盘上未找到 {resSName}");
                     continue;
                 }
 
@@ -105,7 +105,7 @@ namespace TexturePlugin
                 if (!success)
                 {
                     string texFormat = ((TextureFormat)texFile.m_TextureFormat).ToString();
-                    errorBuilder.AppendLine($"[{errorAssetName}]: Failed to decode texture format {texFormat}");
+                    errorBuilder.AppendLine($"[{errorAssetName}]: 无法解码纹理格式 {texFormat}");
                     continue;
                 }
             }

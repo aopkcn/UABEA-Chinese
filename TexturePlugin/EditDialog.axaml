@@ -5,7 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="360"
         Width="300" Height="360"
         x:Class="TexturePlugin.EditDialog"
-        Title="Texture Edit"
+        Title="纹理编辑"
         WindowStartupLocation="CenterOwner">
   <Grid>
     <Grid Margin="10,10,10,10">
@@ -28,38 +28,38 @@
           <RowDefinition Height="Auto" />
           <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label Grid.Column="0"  Grid.Row="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Name</Label>
-        <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Name="boxName"></TextBox>
-        <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Texture format</Label>
-        <ComboBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Name="ddTextureFmt"></ComboBox>
-        <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Has mip maps</Label>
-        <CheckBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Name="chkHasMipMaps"></CheckBox>
-        <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Is readable</Label>
-        <CheckBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Name="chkIsReadable"></CheckBox>
-        <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Filter mode</Label>
-        <ComboBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Name="ddFilterMode"></ComboBox>
-        <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Anisotropic filtering</Label>
-        <TextBox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" Name="boxAnisotFilter"></TextBox>
-        <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Mip map bias</Label>
-        <TextBox Grid.Column="1" Grid.Row="6" HorizontalAlignment="Stretch" Name="boxMipMapBias"></TextBox>
-        <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Wrap mode (U)</Label>
-        <ComboBox Grid.Column="1" Grid.Row="7" HorizontalAlignment="Stretch" Name="ddWrapModeU"></ComboBox>
-        <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Wrap mode (V)</Label>
-        <ComboBox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Stretch" Name="ddWrapModeV"></ComboBox>
-        <Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Lightmap format</Label>
-        <TextBox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Stretch" Name="boxLightMapFormat"></TextBox>
-        <Label Grid.Column="0" Grid.Row="10" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Color space</Label>
-        <ComboBox Grid.Column="1" Grid.Row="10" HorizontalAlignment="Stretch" Name="ddColorSpace"></ComboBox>
-        <Label Grid.Column="0" Grid.Row="11" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Texture</Label>
-        <Button Grid.Column="1" Grid.Row="11" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnLoad">Load</Button>
+		  <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">名称</Label>
+		  <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Name="boxName"></TextBox>
+		  <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">纹理格式</Label>
+		  <ComboBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Name="ddTextureFmt"></ComboBox>
+		  <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">是否包含Mip映射</Label>
+		  <CheckBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Name="chkHasMipMaps"></CheckBox>
+		  <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">是否可读</Label>
+		  <CheckBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Name="chkIsReadable"></CheckBox>
+		  <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">过滤模式</Label>
+		  <ComboBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Name="ddFilterMode"></ComboBox>
+		  <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">各向异性过滤</Label>
+		  <TextBox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" Name="boxAnisotFilter"></TextBox>
+		  <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">Mip映射偏移</Label>
+		  <TextBox Grid.Column="1" Grid.Row="6" HorizontalAlignment="Stretch" Name="boxMipMapBias"></TextBox>
+		  <Label Grid.Column="0" Grid.Row="7" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">包裹模式 (U)</Label>
+		  <ComboBox Grid.Column="1" Grid.Row="7" HorizontalAlignment="Stretch" Name="ddWrapModeU"></ComboBox>
+		  <Label Grid.Column="0" Grid.Row="8" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">包裹模式 (V)</Label>
+		  <ComboBox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Stretch" Name="ddWrapModeV"></ComboBox>
+		  <Label Grid.Column="0" Grid.Row="9" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">光照贴图格式</Label>
+		  <TextBox Grid.Column="1" Grid.Row="9" HorizontalAlignment="Stretch" Name="boxLightMapFormat"></TextBox>
+		  <Label Grid.Column="0" Grid.Row="10" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">颜色空间</Label>
+		  <ComboBox Grid.Column="1" Grid.Row="10" HorizontalAlignment="Stretch" Name="ddColorSpace"></ComboBox>
+		  <Label Grid.Column="0" Grid.Row="11" HorizontalAlignment="Stretch" VerticalContentAlignment="Center">纹理</Label>
+		  <Button Grid.Column="1" Grid.Row="11" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnLoad">加载</Button>
       </Grid>
       <Grid VerticalAlignment="Bottom">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"></ColumnDefinition>
           <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Name="btnSave">Save</Button>
-        <Button Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnCancel">Cancel</Button>
+        <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Name="btnSave">保存</Button>
+        <Button Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Name="btnCancel">取消</Button>
       </Grid>
     </Grid>
   </Grid>

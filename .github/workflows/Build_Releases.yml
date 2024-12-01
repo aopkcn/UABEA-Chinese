@@ -1,0 +1,141 @@
+name: 构建和发布 UABEA
+
+on:
+  push:
+    branches: [Chinese]
+  pull_request:
+    branches: [Chinese]
+
+jobs:
+  build-ubuntu:
+    name: 构建(ubuntu)
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: 安装 .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+
+    - name: 移除 TexToolWrap VC++ 项目
+      run: dotnet sln UABEAvalonia.sln remove TexToolWrap/TexToolWrap.vcxproj
+
+    - name: 还原依赖
+      run: dotnet restore
+
+    - name: 构建项目
+      run: dotnet build --configuration Release --no-restore
+
+    - name: 修复 libonigwrap 目录
+      run: cp UABEAvalonia/bin/Release/net6.0/runtimes/linux/native/libonigwrap.so UABEAvalonia/bin/Release/net6.0/runtimes/linux-x64/native/libonigwrap.so
+
+    - name: 移除未使用的平台
+      run: find UABEAvalonia/bin/Release/net6.0/runtimes/* -maxdepth 0 ! -name linux-x64 -type d -exec rm -r {} +
+
+    - name: 打包构建文件
+      run: |
+        mkdir -p dist
+        # 将 net6.0 文件夹内的文件移动到 dist 目录，并保持结构
+        mkdir -p dist/UABEAvalonia
+        mv UABEAvalonia/bin/Release/net6.0/* dist/UABEAvalonia
+        # 压缩 dist/UABEAvalonia 目录下的所有文件和子目录
+        cd dist
+        zip -r uabea-ubuntu.zip UABEAvalonia
+        # 删除临时目录
+        rm -rf UABEAvalonia
+
+    - name: 上传 Ubuntu 构建文件
+      uses: actions/upload-artifact@v4
+      with:
+        name: uabea-ubuntu
+        path: dist/uabea-ubuntu.zip
+
+  build-windows:
+    name: 构建(windows)
+    runs-on: windows-2022
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: 安装 .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+
+    - name: 设置 MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: 构建项目
+      run: msbuild UABEAvalonia.sln /restore /p:Configuration=Release
+
+    - name: 移除未使用的平台
+      run: |
+        Get-ChildItem -Path "UABEAvalonia\bin\Release\net6.0\runtimes" -Directory |
+        Where-Object { $_.Name -notin @("win-x64", "win7-x64", "win") } |
+        Remove-Item -Recurse -Force
+
+    - name: 打包构建文件
+      run: |
+        mkdir dist
+        mkdir temp\UABEAvalonia
+        # 将 net6.0 目录下的所有文件和文件夹移动到临时目录
+        Move-Item -Path UABEAvalonia\bin\Release\net6.0\* -Destination temp\UABEAvalonia
+        # 压缩临时目录为目标压缩包
+        Compress-Archive -Path temp\UABEAvalonia -DestinationPath dist\uabea-windows.zip
+        # 删除临时目录
+        Remove-Item -Recurse -Force temp
+
+    - name: 上传 Windows 构建文件
+      uses: actions/upload-artifact@v4
+      with:
+        name: uabea-windows
+        path: dist\uabea-windows.zip
+
+  publish:
+    name: 等待构建完成发布
+    needs: [build-ubuntu, build-windows]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v2
+
+    - name: 下载 Ubuntu 构建文件
+      uses: actions/download-artifact@v4
+      with:
+        name: uabea-ubuntu
+        path: dist
+
+    - name: 下载 Windows 构建文件
+      uses: actions/download-artifact@v4
+      with:
+        name: uabea-windows
+        path: dist
+
+    - name: 获取提交时间和提交消息
+      id: get_commit_info
+      run: |
+        commit_time=$(git log -1 --pretty=%cd --date=format:'%Y%m%d-%H%M%S')
+        commit_message=$(git log -1 --pretty=%B)
+        echo "::set-output name=commit_time::$commit_time"
+        echo "::set-output name=message::$commit_message"
+
+    - name: 创建发布并上传文件
+      uses: softprops/action-gh-release@v2
+      with:
+        files: dist/*
+        tag_name: v${{ steps.get_commit_info.outputs.commit_time }}
+        name: "v${{ steps.get_commit_info.outputs.commit_time }}"
+        body: ${{ steps.get_commit_info.outputs.message }}
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_CUSTOM_TOKEN }}

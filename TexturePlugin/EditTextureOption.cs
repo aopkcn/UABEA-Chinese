@@ -14,7 +14,7 @@ namespace TexturePlugin
     {
         public bool SelectionValidForPlugin(AssetsManager am, UABEAPluginAction action, List<AssetContainer> selection, out string name)
         {
-            name = "Edit texture";
+            name = "编辑纹理";
 
             if (action != UABEAPluginAction.Import)
                 return false;

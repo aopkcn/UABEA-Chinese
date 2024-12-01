@@ -102,7 +102,7 @@
 			<Label Grid.Column="0" Grid.Row="2">脚本ID</Label>
 			<Label Grid.Column="0" Grid.Row="3">哈希</Label>
 			<Label Grid.Column="0" Grid.Row="4">Mono哈希</Label>
-            <Label Grid.Column="0" Grid.Row="6">Aligned</Label>
+            <Label Grid.Column="0" Grid.Row="6">对齐</Label>
             <TextBox Grid.Column="1" Grid.Row="0" IsReadOnly="True" Name="boxTypeTreeType" />
             <TextBox Grid.Column="1" Grid.Row="1" IsReadOnly="True" Name="boxTypeTreeTypeId" />
             <TextBox Grid.Column="1" Grid.Row="2" IsReadOnly="True" Name="boxTypeTreeScriptId" />
